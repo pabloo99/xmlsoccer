@@ -1,7 +1,7 @@
 # XMLSoccer
 Java client for XMLSoccer API
 
-Requirements
+# Requirements
 - Java 7 (Not tested using the Java 8)
 - if you want to make some changes in this project you should install
   in your development environment (I used IntelliJ IDEA) plugin lombok if you do not have
@@ -49,7 +49,7 @@ public class Main {
     }
 }
 
-API Reference
+# API Reference
 http://xmlsoccer.wikia.com/wiki/Main_Page
 
 # Motivation
