@@ -5,9 +5,9 @@ Java client for XMLSoccer API
 http://xmlsoccer.wikia.com/wiki/Main_Page
 
 # Motivation
-The project aims to facilitate the use of the service API XMLSoccer
-if someone wants to create a custom application for the presentation
-of live football results using Java.
+The project aims to facilitate the use of the API XMLSoccer.com
+if someone wants to create its own application to the presentation live scores
+and statistics available on the site using Java.
 
 # Requirements
 - Java 7 (Not tested using the Java 8)
