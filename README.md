@@ -1,6 +1,14 @@
 # XMLSoccer
 Java client for XMLSoccer API
 
+# API Reference
+http://xmlsoccer.wikia.com/wiki/Main_Page
+
+# Motivation
+The project aims to facilitate the use of the service API XMLSoccer
+if someone wants to create a custom application for the presentation
+of live football results using Java.
+
 # Requirements
 - Java 7 (Not tested using the Java 8)
 - if you want to make some changes in this project you should install
@@ -29,7 +37,12 @@ public class Main {
     {
         XmlSoccerService xmlSoccerService = new XmlSoccerServiceImpl();
         xmlSoccerService.setApiKey("YOUR API KEY");
+
+        // demo access
         xmlSoccerService.setServiceUrl("http://www.xmlsoccer.com/FootballDataDemo.asmx");
+
+         // full access
+         //xmlSoccerService.setServiceUrl("http://www.xmlsoccer.com/FootballData.asmx");
 
         GetTeamResultDto getTeamResultDto = xmlSoccerService.getTeam("Celtic");
         System.out.println(getTeamResultDto.toString());
@@ -43,21 +56,15 @@ public class Main {
         /* to pass in a parameter the name of the league or the season,
         ** you can use specially prepared enumerated type,
         ** which can be found in the package pl.com.pablo.xmlsoccer.model.enums
+        **
+        ** example:
+        ** List<GetLeagueStandingsResultDto> getLeagueStandingsResultDtoList = xmlSoccerService.getLeagueStandingsBySeason(Leagues.SCOTLAND_SCOTTISH_PREMIER_LEAGUE.getParam(), Seasons.SEASON_2014_2015.getParam());
+        ** System.out.println(getLeagueStandingsResultDtoList.toString());
         */
 
-        //List<GetLeagueStandingsResultDto> getLeagueStandingsResultDtoList = xmlSoccerService.getLeagueStandingsBySeason(Leagues.SCOTLAND_SCOTTISH_PREMIER_LEAGUE.getParam(), Seasons.SEASON_2014_2015.getParam());
-        //System.out.println(getLeagueStandingsResultDtoList.toString());
     }
 }
 ```
-
-# API Reference
-http://xmlsoccer.wikia.com/wiki/Main_Page
-
-# Motivation
-The project aims to facilitate the use of the service API XMLSoccer
-if someone wants to create a custom application for the presentation
-of live football results using Java
 
 # Contributing
 Pull requests are welcome:)
