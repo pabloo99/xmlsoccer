@@ -1,7 +1,4 @@
-### Status
-[![Build Status](https://travis-ci.org/pabloo99/xmlsoccer.svg?branch=master)](https://travis-ci.org/pabloo99/xmlsoccer)
-
-# XMLSoccer
+# XMLSoccer [![Build Status](https://travis-ci.org/pabloo99/xmlsoccer.svg?branch=master)](https://travis-ci.org/pabloo99/xmlsoccer)
 Java client for XMLSoccer API
 
 # API Reference
