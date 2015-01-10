@@ -9,6 +9,7 @@ Java client for XMLSoccer API
 
 # Code Example
 
+```
 import pl.com.pablo.xmlsoccer.api.dto.GetLiveScoreResultDto;
 import pl.com.pablo.xmlsoccer.api.service.XmlSoccerService;
 import pl.com.pablo.xmlsoccer.client.XmlSoccerServiceImpl;
@@ -48,6 +49,7 @@ public class Main {
         //System.out.println(getLeagueStandingsResultDtoList.toString());
     }
 }
+```
 
 # API Reference
 http://xmlsoccer.wikia.com/wiki/Main_Page
