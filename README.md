@@ -18,13 +18,13 @@ and statistics available on the site using Java.
 # Code Example
 
 ```
-import pl.com.pablo.xmlsoccer.api.dto.GetLiveScoreResultDto;
-import pl.com.pablo.xmlsoccer.api.service.XmlSoccerService;
-import pl.com.pablo.xmlsoccer.client.XmlSoccerServiceImpl;
-import pl.com.pablo.xmlsoccer.api.dto.GetLeagueStandingsResultDto;
-import pl.com.pablo.xmlsoccer.api.dto.GetTeamResultDto;
-import pl.com.pablo.xmlsoccer.model.enums.Leagues;
-import pl.com.pablo.xmlsoccer.model.enums.Seasons;
+import com.github.pabloo99.xmlsoccer.api.dto.GetLiveScoreResultDto;
+import com.github.pabloo99.xmlsoccer.api.service.XmlSoccerService;
+import com.github.pabloo99.xmlsoccer.client.XmlSoccerServiceImpl;
+import com.github.pabloo99.xmlsoccer.api.dto.GetLeagueStandingsResultDto;
+import com.github.pabloo99.xmlsoccer.api.dto.GetTeamResultDto;
+import com.github.pabloo99.xmlsoccer.model.enums.Leagues;
+import com.github.pabloo99.xmlsoccer.model.enums.Seasons;
 
 import java.util.List;
 
@@ -41,8 +41,8 @@ public class Main {
         // demo access
         xmlSoccerService.setServiceUrl("http://www.xmlsoccer.com/FootballDataDemo.asmx");
 
-         // full access
-         //xmlSoccerService.setServiceUrl("http://www.xmlsoccer.com/FootballData.asmx");
+        // full access
+        //xmlSoccerService.setServiceUrl("http://www.xmlsoccer.com/FootballData.asmx");
 
         GetTeamResultDto getTeamResultDto = xmlSoccerService.getTeam("Celtic");
         System.out.println(getTeamResultDto.toString());

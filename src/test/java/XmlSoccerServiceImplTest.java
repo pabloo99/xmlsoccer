@@ -4,11 +4,10 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
 import org.springframework.util.Assert;
 import org.testng.annotations.Test;
-import pl.com.pablo.xmlsoccer.client.XmlSoccerServiceImpl;
-import pl.com.pablo.xmlsoccer.api.dto.*;
-import pl.com.pablo.xmlsoccer.api.service.XmlSoccerService;
-import pl.com.pablo.xmlsoccer.model.enums.Leagues;
-import pl.com.pablo.xmlsoccer.model.enums.Seasons;
+import com.github.pabloo99.xmlsoccer.api.dto.*;
+import com.github.pabloo99.xmlsoccer.api.service.XmlSoccerService;
+import com.github.pabloo99.xmlsoccer.model.enums.Leagues;
+import com.github.pabloo99.xmlsoccer.model.enums.Seasons;
 
 import javax.xml.datatype.XMLGregorianCalendar;
 import java.util.List;

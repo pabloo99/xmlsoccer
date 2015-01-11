@@ -7,14 +7,14 @@
     <!--OTHER-->
     <bean id="marshaller" class="org.springframework.oxm.jaxb.Jaxb2Marshaller">
         <property name="contextPath">
-            <value>pl.com.pablo.xmlsoccer.webservice</value>
+            <value>com.github.pabloo99.xmlsoccer.webservice</value>
         </property>
     </bean>
 
     <bean id="modelMapper" class="org.modelmapper.ModelMapper"/>
 
     <!--SERVICE-->
-    <bean id="xmlSoccerService" class="pl.com.pablo.xmlsoccer.client.XmlSoccerServiceImpl">
+    <bean id="xmlSoccerService" class="com.github.pabloo99.xmlsoccer.client.XmlSoccerServiceImpl">
         <property name="apiKey" value="APIKEY"/>
 
         <property name="defaultUri">
