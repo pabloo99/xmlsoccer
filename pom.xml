@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>pl.com.pablo.xmlsoccer</groupId>
+    <groupId>com.github.pabloo99.xmlsoccer</groupId>
     <artifactId>xmlsoccer</artifactId>
     <version>0.1</version>
 
@@ -34,20 +34,6 @@
         <connection>scm:git:git://github.com/pabloo99/xmlsoccer.git</connection>
         <developerConnection>scm:git:git@github.com:pabloo99/xmlsoccer.git</developerConnection>
     </scm>
-
-    <repositories>
-        <repository>
-            <id>codelds</id>
-            <url>https://code.lds.org/nexus/content/groups/main-repo</url>
-        </repository>
-    </repositories>
-
-    <distributionManagement>
-        <repository>
-            <id>releases</id>
-            <url>https://code.lds.org/nexus/content/groups/main-repo</url>
-        </repository>
-    </distributionManagement>
 
     <properties>
         <xmlsoccer.version>0.1</xmlsoccer.version>
