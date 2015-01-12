@@ -17,6 +17,17 @@ and statistics available on the site using Java.
 
 # Code Example
 
+If you are using Maven you can add dependency from Maven Central Repository
+```
+    <dependency>
+      <groupId>com.github.pabloo99.xmlsoccer</groupId>
+      <artifactId>xmlsoccer</artifactId>
+      <version>0.1</version>
+    </dependency>
+```
+or you can simply download jar file from:
+https://oss.sonatype.org/index.html#nexus-search;quick~xmlsoccer
+
 ```
 import com.github.pabloo99.xmlsoccer.api.dto.GetLiveScoreResultDto;
 import com.github.pabloo99.xmlsoccer.api.service.XmlSoccerService;
