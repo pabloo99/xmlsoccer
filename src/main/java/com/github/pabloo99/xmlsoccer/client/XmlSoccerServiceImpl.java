@@ -505,6 +505,7 @@ public class XmlSoccerServiceImpl extends WebServiceGatewaySupport implements Xm
 
         GetHistoricMatchesByLeagueAndDateInterval request = new GetHistoricMatchesByLeagueAndDateInterval();
         request.setApiKey(apiKey);
+        request.setLeague(leagueName); 
         request.setStartDateString(startDate);
         request.setEndDateString(endDate);
 
