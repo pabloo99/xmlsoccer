@@ -38,19 +38,16 @@ public class XmlSoccerServiceImpl extends WebServiceGatewaySupport implements Xm
         setUnmarshaller(marshaller);
     }
 
-    @Override
     public void setServiceUrl(String url)
     {
         setDefaultUri(url);
     }
 
-    @Override
     public void setApiKey(String apiKey)
     {
         this.apiKey = apiKey;
     }
 
-    @Override
     public String checkApiKey(String apiKey)
     {
         CheckApiKey request = new CheckApiKey();
@@ -64,7 +61,6 @@ public class XmlSoccerServiceImpl extends WebServiceGatewaySupport implements Xm
         return response.getCheckApiKeyResult();
     }
 
-    @Override
     public List<GetLiveScoreResultDto> getLiveScore() {
 
         GetLiveScore request = new GetLiveScore();
@@ -84,7 +80,6 @@ public class XmlSoccerServiceImpl extends WebServiceGatewaySupport implements Xm
         return getLiveScoreResultDto;
     }
 
-    @Override
     public List<GetLiveScoreResultDto> getLiveScoreByLeague(String leagueName) {
 
         GetLiveScoreByLeague request = new GetLiveScoreByLeague();
@@ -105,7 +100,6 @@ public class XmlSoccerServiceImpl extends WebServiceGatewaySupport implements Xm
         return getLiveScoreResultDto;
     }
 
-    @Override
     public List<GetLeagueStandingsResultDto> getLeagueStandingsBySeason(String leagueName,String season) {
 
         GetLeagueStandingsBySeason request = new GetLeagueStandingsBySeason();
@@ -130,7 +124,6 @@ public class XmlSoccerServiceImpl extends WebServiceGatewaySupport implements Xm
         return getLeagueStandingsResultDto;
     }
 
-    @Override
     public List<GetAllLeaguesResultDto> getAllLeagues() {
 
         GetAllLeagues request = new GetAllLeagues();
@@ -150,7 +143,6 @@ public class XmlSoccerServiceImpl extends WebServiceGatewaySupport implements Xm
         return getAllLeaguesResultDto;
     }
 
-    @Override
     public List<GetTeamResultDto> getAllTeams() {
 
         GetAllTeams request = new GetAllTeams();
@@ -170,7 +162,6 @@ public class XmlSoccerServiceImpl extends WebServiceGatewaySupport implements Xm
         return getAllTeamsResultDto;
     }
 
-    @Override
     public List<GetTeamResultDto> getAllTeamsByLeagueAndSeason(String leagueName, String season) {
 
         GetAllTeamsByLeagueAndSeason request = new GetAllTeamsByLeagueAndSeason();
@@ -183,7 +174,7 @@ public class XmlSoccerServiceImpl extends WebServiceGatewaySupport implements Xm
                 new SoapActionCallback(
                         "http://xmlsoccer.com/GetAllTeamsByLeagueAndSeason"));
 
-        GetAllTeamsResultXML getAllTeamsResultXML = response.getGetAllTeamsByLeagueAndSeasonResult().getContent();
+        GetAllTeamsByLeagueAndSeasonResultXML getAllTeamsResultXML = response.getGetAllTeamsByLeagueAndSeasonResult().getContent();
 
         Type listType = new TypeToken<List<GetTeamResultDto>>() {}.getType();
 
@@ -192,7 +183,6 @@ public class XmlSoccerServiceImpl extends WebServiceGatewaySupport implements Xm
         return getAllTeamsResultDto;
     }
 
-    @Override
     public GetPlayersResultDto getPlayersById(Integer playerId) {
 
         GetPlayerById request = new GetPlayerById();
@@ -216,7 +206,6 @@ public class XmlSoccerServiceImpl extends WebServiceGatewaySupport implements Xm
         return getPlayersResultDto.get(0);
     }
 
-    @Override
     public List<GetPlayersResultDto> getPlayersByTeam(Integer teamId) {
 
         GetPlayersByTeam request = new GetPlayersByTeam();
@@ -237,7 +226,6 @@ public class XmlSoccerServiceImpl extends WebServiceGatewaySupport implements Xm
         return getPlayersResultDto;
     }
 
-    @Override
     public List<GetOddsResultDto> getAllOddsByFixtureMatchId(Integer fixtureMatchId) {
 
         GetAllOddsByFixtureMatchId request = new GetAllOddsByFixtureMatchId();
@@ -258,7 +246,6 @@ public class XmlSoccerServiceImpl extends WebServiceGatewaySupport implements Xm
         return getOddsResultDto;
     }
 
-    @Override
     public List<GetOddsResultDto> getOddsByFixtureMatchId(Integer fixtureMatchId) {
 
         GetOddsByFixtureMatchId request = new GetOddsByFixtureMatchId();
@@ -279,7 +266,6 @@ public class XmlSoccerServiceImpl extends WebServiceGatewaySupport implements Xm
         return getOddsResultDto;
     }
 
-    @Override
     public List<GetOddsResultDto> getNextMatchOddsByLeague(String leagueName) {
 
         GetNextMatchOddsByLeague request = new GetNextMatchOddsByLeague();
@@ -301,7 +287,6 @@ public class XmlSoccerServiceImpl extends WebServiceGatewaySupport implements Xm
 
     }
 
-    @Override
     public GetTeamResultDto getTeam(String teamName) {
 
         GetTeam request = new GetTeam();
@@ -323,7 +308,6 @@ public class XmlSoccerServiceImpl extends WebServiceGatewaySupport implements Xm
         return getTeamResultDto;
     }
 
-    @Override
     public List<GetTopScorersResultDto> getTopScorersByLeagueAndSeason(String leagueName, String season) {
 
         GetTopScorersByLeagueAndSeason request = new GetTopScorersByLeagueAndSeason();
@@ -345,7 +329,6 @@ public class XmlSoccerServiceImpl extends WebServiceGatewaySupport implements Xm
         return getTopScorersResultDto;
     }
 
-    @Override
     public List<GetTopScorersResultDto> getTopScorersByGropupId(Integer group) {
 
         GetTopScorersByGroupId request = new GetTopScorersByGroupId();
@@ -366,7 +349,6 @@ public class XmlSoccerServiceImpl extends WebServiceGatewaySupport implements Xm
         return getTopScorersResultDto;
     }
 
-    @Override
     public List<GetFixturesResultDto> getFixturesByDateInterval(String startDate, String endDate) {
 
         GetFixturesByDateInterval request = new GetFixturesByDateInterval();
@@ -388,7 +370,6 @@ public class XmlSoccerServiceImpl extends WebServiceGatewaySupport implements Xm
         return getFixturesResultDto;
     }
 
-    @Override
     public List<GetFixturesResultDto> getFixturesByDateIntervalAndLeague(String leagueName, String startDate, String endDate) {
 
         GetFixturesByDateIntervalAndLeague request = new GetFixturesByDateIntervalAndLeague();
@@ -412,7 +393,6 @@ public class XmlSoccerServiceImpl extends WebServiceGatewaySupport implements Xm
 
     }
 
-    @Override
     public List<GetFixturesResultDto> getFixturesByDateIntervalAndTeam(Integer team_id, String startDate, String endDate) {
 
         GetFixturesByDateIntervalAndTeam request = new GetFixturesByDateIntervalAndTeam();
@@ -436,7 +416,6 @@ public class XmlSoccerServiceImpl extends WebServiceGatewaySupport implements Xm
 
     }
 
-    @Override
     public List<GetFixturesResultDto> getFixturesByLeagueAndSeason(String leagueName, String season) {
 
         GetFixturesByLeagueAndSeason request = new GetFixturesByLeagueAndSeason();
@@ -458,7 +437,6 @@ public class XmlSoccerServiceImpl extends WebServiceGatewaySupport implements Xm
         return getFixturesResultDto;
     }
 
-    @Override
     public List<GetHistoricMatchesResultDto> getHistoricMatchesByFixtureMatchID(Integer fixtureMatchId) {
 
         GetHistoricMatchesByFixtureMatchID request = new GetHistoricMatchesByFixtureMatchID();
@@ -479,7 +457,6 @@ public class XmlSoccerServiceImpl extends WebServiceGatewaySupport implements Xm
         return getHistoricMatchesResultDto;
     }
 
-    @Override
     public List<GetHistoricMatchesResultDto> getHistoricMatchesByID(Integer matchId) {
 
         GetHistoricMatchesByID request = new GetHistoricMatchesByID();
@@ -500,7 +477,6 @@ public class XmlSoccerServiceImpl extends WebServiceGatewaySupport implements Xm
         return getHistoricMatchesResultDto;
     }
 
-    @Override
     public List<GetHistoricMatchesResultDto> getHistoricMatchesByLeagueAndDateInterval(String leagueName, String startDate, String endDate) {
 
         GetHistoricMatchesByLeagueAndDateInterval request = new GetHistoricMatchesByLeagueAndDateInterval();
@@ -523,7 +499,6 @@ public class XmlSoccerServiceImpl extends WebServiceGatewaySupport implements Xm
         return getHistoricMatchesResultDto;
     }
 
-    @Override
     public List<GetHistoricMatchesResultDto> getHistoricMatchesByLeagueAndSeason(String leagueName, String season) {
 
         GetHistoricMatchesByLeagueAndSeason request = new GetHistoricMatchesByLeagueAndSeason();
@@ -545,7 +520,6 @@ public class XmlSoccerServiceImpl extends WebServiceGatewaySupport implements Xm
         return getHistoricMatchesResultDto;
     }
 
-    @Override
     public List<GetHistoricMatchesResultDto> getHistoricMatchesByTeamAndDateInterval(Integer team_id, String startDate, String endDate) {
 
         GetHistoricMatchesByTeamAndDateInterval request = new GetHistoricMatchesByTeamAndDateInterval();
@@ -568,7 +542,6 @@ public class XmlSoccerServiceImpl extends WebServiceGatewaySupport implements Xm
         return getHistoricMatchesResultDto;
     }
 
-    @Override
     public List<GetHistoricMatchesResultDto> getHistoricMatchesByTeamsAndDateInterval(Integer team_id1, Integer team_id2, String startDate, String endDate) {
 
         GetHistoricMatchesByTeamsAndDateInterval request = new GetHistoricMatchesByTeamsAndDateInterval();
@@ -592,7 +565,6 @@ public class XmlSoccerServiceImpl extends WebServiceGatewaySupport implements Xm
         return getHistoricMatchesResultDto;
     }
 
-    @Override
     public XMLGregorianCalendar getEarliestMatchDatePerLeague(String leagueName) {
 
         GetEarliestMatchDatePerLeague request = new GetEarliestMatchDatePerLeague();

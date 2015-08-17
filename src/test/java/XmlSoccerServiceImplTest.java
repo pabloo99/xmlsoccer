@@ -53,8 +53,7 @@ public class XmlSoccerServiceImplTest extends AbstractTestNGSpringContextTests {
     }
 
     @Test
-    public void
-    testGetPlayersByTeamId() throws Exception {
+    public void testGetPlayersByTeamId() throws Exception {
         List<GetPlayersResultDto> test = xmlSoccerService.getPlayersByTeam(52);
 
         Assert.notNull(test);
@@ -98,6 +97,13 @@ public class XmlSoccerServiceImplTest extends AbstractTestNGSpringContextTests {
     @Test
     public void testGetAllTeams() throws Exception {
         List<GetTeamResultDto> test = xmlSoccerService.getAllTeams();
+
+        Assert.notNull(test);
+    }
+
+    @Test
+    public void testGetAllTeamsByLeagueAndSeason() throws Exception {
+        List<GetTeamResultDto> test = xmlSoccerService.getAllTeamsByLeagueAndSeason(Leagues.SCOTLAND_SCOTTISH_PREMIER_LEAGUE.getParam(),Seasons.SEASON_2012_2013.getParam());
 
         Assert.notNull(test);
     }

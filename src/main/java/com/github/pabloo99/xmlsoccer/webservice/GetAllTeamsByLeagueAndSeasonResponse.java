@@ -1,6 +1,7 @@
 
 package com.github.pabloo99.xmlsoccer.webservice;
 
+import com.github.pabloo99.xmlsoccer.model.xml.GetAllTeamsByLeagueAndSeasonResultXML;
 import com.github.pabloo99.xmlsoccer.model.xml.GetAllTeamsResultXML;
 
 import javax.xml.bind.annotation.*;
@@ -92,8 +93,8 @@ public class GetAllTeamsByLeagueAndSeasonResponse {
 
     public static class GetAllTeamsByLeagueAndSeasonResult {
 
-        @XmlElementRef(name="XMLSOCCER.COM", type=GetAllTeamsResultXML.class)
-        protected GetAllTeamsResultXML content;
+        @XmlElementRef(name="XMLSOCCER.COM", type=GetAllTeamsByLeagueAndSeasonResultXML.class)
+        protected GetAllTeamsByLeagueAndSeasonResultXML content;
 
         /**
          * Gets the value of the content property.
@@ -118,9 +119,9 @@ public class GetAllTeamsByLeagueAndSeasonResponse {
          * 
          * 
          */
-        public GetAllTeamsResultXML getContent() {
+        public GetAllTeamsByLeagueAndSeasonResultXML getContent() {
             if (content == null) {
-                content = new GetAllTeamsResultXML();
+                content = new GetAllTeamsByLeagueAndSeasonResultXML();
             }
             return this.content;
         }
