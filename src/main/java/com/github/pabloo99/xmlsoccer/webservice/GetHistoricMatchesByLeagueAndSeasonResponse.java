@@ -5,36 +5,6 @@ import com.github.pabloo99.xmlsoccer.model.xml.GetHistoricMatchesResultXML;
 
 import javax.xml.bind.annotation.*;
 
-
-/**
- * <p>Java class for anonymous complex type.
- * 
- * <p>The following schema fragment specifies the expected content contained within this class.
- * 
- * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="GetHistoricMatchesByLeagueAndSeasonResult" minOccurs="0">
- *           &lt;complexType>
- *             &lt;complexContent>
- *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                 &lt;sequence>
- *                   &lt;any/>
- *                 &lt;/sequence>
- *               &lt;/restriction>
- *             &lt;/complexContent>
- *           &lt;/complexType>
- *         &lt;/element>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "getHistoricMatchesByLeagueAndSeasonResult"
@@ -68,27 +38,6 @@ public class GetHistoricMatchesByLeagueAndSeasonResponse {
     public void setGetHistoricMatchesByLeagueAndSeasonResult(GetHistoricMatchesByLeagueAndSeasonResponse.GetHistoricMatchesByLeagueAndSeasonResult value) {
         this.getHistoricMatchesByLeagueAndSeasonResult = value;
     }
-
-
-    /**
-     * <p>Java class for anonymous complex type.
-     * 
-     * <p>The following schema fragment specifies the expected content contained within this class.
-     * 
-     * <pre>
-     * &lt;complexType>
-     *   &lt;complexContent>
-     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *       &lt;sequence>
-     *         &lt;any/>
-     *       &lt;/sequence>
-     *     &lt;/restriction>
-     *   &lt;/complexContent>
-     * &lt;/complexType>
-     * </pre>
-     * 
-     * 
-     */
 
     public static class GetHistoricMatchesByLeagueAndSeasonResult {
 
