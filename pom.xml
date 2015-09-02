@@ -6,7 +6,7 @@
 
     <groupId>com.github.pabloo99.xmlsoccer</groupId>
     <artifactId>xmlsoccer</artifactId>
-    <version>0.0.1</version>
+    <version>${xmlsoccer.version}</version>
 
     <name>xmlsoccer-client</name>
     <description>Java client for XMLSoccer API</description>
@@ -40,7 +40,7 @@
     </scm>
 
     <properties>
-        <xmlsoccer.version>0.0.1</xmlsoccer.version>
+        <xmlsoccer.version>0.0.2</xmlsoccer.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.version.range>[2.2.1,3.2.1)</maven.version.range>
         <maven.enforcer.plugin>1.3.1</maven.enforcer.plugin>
