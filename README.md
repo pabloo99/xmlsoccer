@@ -1,4 +1,4 @@
-# XMLSoccer [![Build Status](https://travis-ci.org/pabloo99/xmlsoccer.svg?branch=master)](https://travis-ci.org/pabloo99/xmlsoccer)
+# XMLSoccer 0.0.2 [![Build Status](https://travis-ci.org/pabloo99/xmlsoccer.svg?branch=master)](https://travis-ci.org/pabloo99/xmlsoccer)
 Java client for XMLSoccer API
 
 # API Reference
@@ -10,7 +10,7 @@ if someone wants to create its own application to the presentation live scores
 and statistics available on the site using Java.
 
 # Requirements
-- Java 7 (Not tested using the Java 8)
+- working on Java 7 and Java 8 (not tested in older versions)
 - if you want to make some changes in this project you should install
   in your development environment (I used IntelliJ IDEA) plugin lombok if you do not have
   link: https://plugins.jetbrains.com/plugin/6317
@@ -22,7 +22,7 @@ If you are using Maven you can add dependency from Maven Central Repository
     <dependency>
       <groupId>com.github.pabloo99.xmlsoccer</groupId>
       <artifactId>xmlsoccer</artifactId>
-      <version>0.1</version>
+      <version>0.0.2</version>
     </dependency>
 ```
 or you can simply download jar file from:
