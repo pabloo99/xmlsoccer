@@ -35,9 +35,9 @@ public class GetLiveScoreResultXML {
         "league",
         "round",
         "spectators",
-        "hometeam",
+        "homeTeam",
         "homeTeamId",
-        "awayteam",
+        "awayTeam",
         "awayTeamId",
         "time",
         "homeGoals",
@@ -81,12 +81,12 @@ public class GetLiveScoreResultXML {
         protected String round;
         @XmlElement(name = "Spectators", required = true)
         protected String spectators;
-        @XmlElement(name = "Hometeam", required = true)
-        protected String hometeam;
+        @XmlElement(name = "HomeTeam", required = true)
+        protected String homeTeam;
         @XmlElement(name = "HomeTeam_Id")
         protected int homeTeamId;
-        @XmlElement(name = "Awayteam", required = true)
-        protected String awayteam;
+        @XmlElement(name = "AwayTeam", required = true)
+        protected String awayTeam;
         @XmlElement(name = "AwayTeam_Id")
         protected int awayTeamId;
         @XmlElement(name = "Time", required = true)

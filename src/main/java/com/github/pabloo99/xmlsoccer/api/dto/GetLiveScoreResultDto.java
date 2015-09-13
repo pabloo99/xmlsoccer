@@ -21,9 +21,9 @@ public class GetLiveScoreResultDto implements Serializable{
     private String league;
     private String round;
     private String spectators;
-    private String hometeam;
+    private String homeTeam;
     private int homeTeamId;
-    private String awayteam;
+    private String awayTeam;
     private int awayTeamId;
     private String time;
     private int homeGoals;
