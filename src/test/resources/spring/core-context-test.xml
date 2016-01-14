@@ -6,9 +6,7 @@
 
     <!--OTHER-->
     <bean id="marshaller" class="org.springframework.oxm.jaxb.Jaxb2Marshaller">
-        <property name="contextPath">
-            <value>com.github.pabloo99.xmlsoccer.webservice</value>
-        </property>
+        <property name="contextPath" value="com.github.pabloo99.xmlsoccer.webservice"/>
     </bean>
 
     <bean id="modelMapper" class="org.modelmapper.ModelMapper"/>
@@ -17,18 +15,10 @@
     <bean id="xmlSoccerService" class="com.github.pabloo99.xmlsoccer.client.XmlSoccerServiceImpl">
         <property name="apiKey" value="APIKEY"/>
 
-        <property name="defaultUri">
-            <value>http://www.xmlsoccer.com/FootballDataDemo.asmx</value>
-        </property>
-        <property name="marshaller">
-            <ref bean="marshaller"/>
-        </property>
-        <property name="unmarshaller">
-            <ref bean="marshaller"/>
-        </property>
+        <property name="defaultUri" value="http://www.xmlsoccer.com/FootballDataDemo.asmx"/>
+        <property name="marshaller" ref="marshaller"/>
+        <property name="unmarshaller" ref="marshaller"/>
 
-        <property name="modelMapper">
-            <ref bean="modelMapper"/>
-        </property>
+        <property name="modelMapper" ref="modelMapper"/>
     </bean>
 </beans>

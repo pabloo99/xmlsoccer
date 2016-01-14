@@ -37,7 +37,7 @@ public interface XmlSoccerService {
     GetTeamResultDto getTeam(String teamName);
 
     List<GetTopScorersResultDto> getTopScorersByLeagueAndSeason(String leagueName, String season);
-    List<GetTopScorersResultDto> getTopScorersByGropupId(Integer group);
+    List<GetTopScorersResultDto> getTopScorersByGroupId(Integer group);
 
     List<GetFixturesResultDto> getFixturesByDateInterval(String startDate, String endDate);
     List<GetFixturesResultDto> getFixturesByDateIntervalAndLeague(String leagueName, String startDate, String endDate);
