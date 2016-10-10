@@ -1,4 +1,4 @@
-# XMLSoccer 0.0.2 [![Build Status](https://travis-ci.org/pabloo99/xmlsoccer.svg?branch=master)](https://travis-ci.org/pabloo99/xmlsoccer)
+# XMLSoccer 0.0.4 [![Build Status](https://travis-ci.org/pabloo99/xmlsoccer.svg?branch=master)](https://travis-ci.org/pabloo99/xmlsoccer)
 Java client for XMLSoccer API
 
 # API Reference
