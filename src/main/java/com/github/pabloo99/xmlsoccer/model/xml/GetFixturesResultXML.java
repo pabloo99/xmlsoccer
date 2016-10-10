@@ -9,7 +9,7 @@ import java.util.List;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "match"
+        "match"
 })
 @XmlRootElement(name = "XMLSOCCER.COM")
 @Data
@@ -27,42 +27,42 @@ public class GetFixturesResultXML {
 
     @XmlAccessorType(XmlAccessType.FIELD)
     @XmlType(name = "", propOrder = {
-        "id",
-        "date",
-        "league",
-        "round",
-        "homeTeam",
-        "homeTeamId",
-        "homeGoals",
-        "awayTeam",
-        "awayTeamId",
-        "awayGoals",
-        "time",
-        "location",
-        "betAtHome",
-        "betAtDraw",
-        "betAtAway",
-        "betAtHomeLink",
-        "centreBetHome",
-        "centreBetDraw",
-        "centreBetAway",
-        "centreBetLink",
-        "gameBookersHome",
-        "gameBookersDraw",
-        "gameBookersAway",
-        "gameBookersLink",
-        "williamHillHome",
-        "williamHillDraw",
-        "williamHillAway",
-        "williamHillLink",
-        "interwettenHome",
-        "interwettenDraw",
-        "interwettenAway",
-        "interwettenLink",
-        "homeTeamYellowCardDetails",
-        "awayTeamYellowCardDetails",
-        "homeTeamRedCardDetails",
-        "awayTeamRedCardDetails"
+            "id",
+            "date",
+            "league",
+            "round",
+            "homeTeam",
+            "homeTeamId",
+            "homeGoals",
+            "awayTeam",
+            "awayTeamId",
+            "awayGoals",
+            "time",
+            "location",
+            "betAtHome",
+            "betAtDraw",
+            "betAtAway",
+            "betAtHomeLink",
+            "centreBetHome",
+            "centreBetDraw",
+            "centreBetAway",
+            "centreBetLink",
+            "gameBookersHome",
+            "gameBookersDraw",
+            "gameBookersAway",
+            "gameBookersLink",
+            "williamHillHome",
+            "williamHillDraw",
+            "williamHillAway",
+            "williamHillLink",
+            "interwettenHome",
+            "interwettenDraw",
+            "interwettenAway",
+            "interwettenLink",
+            "homeTeamYellowCardDetails",
+            "awayTeamYellowCardDetails",
+            "homeTeamRedCardDetails",
+            "awayTeamRedCardDetails"
     })
     @Data
     public static class Match {

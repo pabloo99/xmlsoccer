@@ -1,6 +1,5 @@
 package com.github.pabloo99.xmlsoccer.client;
 
-
 import lombok.Setter;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.TypeToken;
@@ -14,12 +13,8 @@ import com.github.pabloo99.xmlsoccer.model.xml.*;
 
 import javax.xml.datatype.XMLGregorianCalendar;
 import java.lang.reflect.Type;
+import java.util.ArrayList;
 import java.util.List;
-
-/**
- * Created by pmazur on 2014-11-30.
- */
-
 
 public class XmlSoccerServiceImpl extends WebServiceGatewaySupport implements XmlSoccerService {
 
@@ -29,8 +24,7 @@ public class XmlSoccerServiceImpl extends WebServiceGatewaySupport implements Xm
     @Setter
     private ModelMapper modelMapper;
 
-    public XmlSoccerServiceImpl()
-    {
+    public XmlSoccerServiceImpl() {
         modelMapper = new ModelMapper();
         marshaller = new Jaxb2Marshaller();
         marshaller.setContextPath("com.github.pabloo99.xmlsoccer.webservice");
@@ -38,18 +32,15 @@ public class XmlSoccerServiceImpl extends WebServiceGatewaySupport implements Xm
         setUnmarshaller(marshaller);
     }
 
-    public void setServiceUrl(String url)
-    {
+    public void setServiceUrl(String url) {
         setDefaultUri(url);
     }
 
-    public void setApiKey(String apiKey)
-    {
+    public void setApiKey(String apiKey) {
         this.apiKey = apiKey;
     }
 
-    public String checkApiKey(String apiKey)
-    {
+    public String checkApiKey(String apiKey) {
         CheckApiKey request = new CheckApiKey();
         request.setApiKey(apiKey);
 
@@ -73,7 +64,8 @@ public class XmlSoccerServiceImpl extends WebServiceGatewaySupport implements Xm
 
         GetLiveScoreResultXML getLiveScoreResultXML = response.getGetLiveScoreResult().getContent();
 
-        Type listType = new TypeToken<List<GetLiveScoreResultDto>>() {}.getType();
+        Type listType = new TypeToken<List<GetLiveScoreResultDto>>() {
+        }.getType();
 
         return modelMapper.map(getLiveScoreResultXML.getMatch(), listType);
     }
@@ -91,12 +83,13 @@ public class XmlSoccerServiceImpl extends WebServiceGatewaySupport implements Xm
 
         GetLiveScoreResultXML getLiveScoreResultXML = response.getGetLiveScoreByLeagueResult().getContent();
 
-        Type listType = new TypeToken<List<GetLiveScoreResultDto>>() {}.getType();
+        Type listType = new TypeToken<List<GetLiveScoreResultDto>>() {
+        }.getType();
 
         return modelMapper.map(getLiveScoreResultXML.getMatch(), listType);
     }
 
-    public List<GetLeagueStandingsResultDto> getLeagueStandingsBySeason(String leagueName,String season) {
+    public List<GetLeagueStandingsResultDto> getLeagueStandingsBySeason(String leagueName, String season) {
 
         GetLeagueStandingsBySeason request = new GetLeagueStandingsBySeason();
         request.setApiKey(apiKey);
@@ -110,10 +103,11 @@ public class XmlSoccerServiceImpl extends WebServiceGatewaySupport implements Xm
 
         GetLeagueStandingsBySeasonResultXML getLeagueStandingsBySeasonResultXML = response.getGetLeagueStandingsBySeasonResult().getContent();
 
-        if(getLeagueStandingsBySeasonResultXML.getTeamLeagueStanding()==null)
-            return null;
+        if (getLeagueStandingsBySeasonResultXML.getTeamLeagueStanding() == null)
+            return new ArrayList<>();
 
-        Type listType = new TypeToken<List<GetLeagueStandingsResultDto>>() {}.getType();
+        Type listType = new TypeToken<List<GetLeagueStandingsResultDto>>() {
+        }.getType();
 
         return modelMapper.map(getLeagueStandingsBySeasonResultXML.getTeamLeagueStanding(), listType);
     }
@@ -130,9 +124,10 @@ public class XmlSoccerServiceImpl extends WebServiceGatewaySupport implements Xm
 
         GetAllLeaguesResultXML getAllLeaguesResultXML = response.getGetAllLeaguesResult().getContent();
 
-        Type listType = new TypeToken<List<GetAllLeaguesResultDto>>() {}.getType();
+        Type listType = new TypeToken<List<GetAllLeaguesResultDto>>() {
+        }.getType();
 
-        return modelMapper.map(getAllLeaguesResultXML.getLeague(),listType);
+        return modelMapper.map(getAllLeaguesResultXML.getLeague(), listType);
     }
 
     public List<GetTeamResultDto> getAllTeams() {
@@ -147,9 +142,10 @@ public class XmlSoccerServiceImpl extends WebServiceGatewaySupport implements Xm
 
         GetAllTeamsResultXML getAllTeamsResultXML = response.getGetAllTeamsResult().getContent();
 
-        Type listType = new TypeToken<List<GetTeamResultDto>>() {}.getType();
+        Type listType = new TypeToken<List<GetTeamResultDto>>() {
+        }.getType();
 
-        return modelMapper.map(getAllTeamsResultXML.getTeam(),listType);
+        return modelMapper.map(getAllTeamsResultXML.getTeam(), listType);
     }
 
     public List<GetTeamResultDto> getAllTeamsByLeagueAndSeason(String leagueName, String season) {
@@ -166,9 +162,10 @@ public class XmlSoccerServiceImpl extends WebServiceGatewaySupport implements Xm
 
         GetAllTeamsByLeagueAndSeasonResultXML getAllTeamsResultXML = response.getGetAllTeamsByLeagueAndSeasonResult().getContent();
 
-        Type listType = new TypeToken<List<GetTeamResultDto>>() {}.getType();
+        Type listType = new TypeToken<List<GetTeamResultDto>>() {
+        }.getType();
 
-        return modelMapper.map(getAllTeamsResultXML.getTeam(),listType);
+        return modelMapper.map(getAllTeamsResultXML.getTeam(), listType);
     }
 
     public GetPlayersResultDto getPlayersById(Integer playerId) {
@@ -184,12 +181,13 @@ public class XmlSoccerServiceImpl extends WebServiceGatewaySupport implements Xm
 
         GetPlayersByTeamResultXML getPlayersByTeamResultXML = response.getGetPlayerByIdResult().getContent();
 
-        if(getPlayersByTeamResultXML.getPlayer().isEmpty())
+        if (getPlayersByTeamResultXML.getPlayer().isEmpty())
             return null;
 
-        Type listType = new TypeToken<List<GetPlayersResultDto>>() {}.getType();
+        Type listType = new TypeToken<List<GetPlayersResultDto>>() {
+        }.getType();
 
-        List<GetPlayersResultDto> getPlayersResultDto = modelMapper.map(getPlayersByTeamResultXML.getPlayer(),listType);
+        List<GetPlayersResultDto> getPlayersResultDto = modelMapper.map(getPlayersByTeamResultXML.getPlayer(), listType);
 
         return getPlayersResultDto.get(0);
     }
@@ -207,12 +205,13 @@ public class XmlSoccerServiceImpl extends WebServiceGatewaySupport implements Xm
 
         GetPlayersByTeamResultXML getPlayersByTeamResultXML = response.getGetPlayersByTeamResult().getContent();
 
-        Type listType = new TypeToken<List<GetPlayersResultDto>>() {}.getType();
+        Type listType = new TypeToken<List<GetPlayersResultDto>>() {
+        }.getType();
 
-        return modelMapper.map(getPlayersByTeamResultXML.getPlayer(),listType);
+        return modelMapper.map(getPlayersByTeamResultXML.getPlayer(), listType);
     }
 
-    public List<GetOddsResultDto> getAllOddsByFixtureMatchId(Integer fixtureMatchId) {
+    public List<GetAllOddsResultDto> getAllOddsByFixtureMatchId(Integer fixtureMatchId) {
 
         GetAllOddsByFixtureMatchId request = new GetAllOddsByFixtureMatchId();
         request.setApiKey(apiKey);
@@ -223,11 +222,15 @@ public class XmlSoccerServiceImpl extends WebServiceGatewaySupport implements Xm
                 new SoapActionCallback(
                         "http://xmlsoccer.com/GetAllOddsByFixtureMatchId"));
 
-        GetOddsByFixtureMatchIdResultXML getOddsByFixtureMatchIdResultXML = response.getGetAllOddsByFixtureMatchIdResult().getContent();
+        GetAllOddsXML getOddsByFixtureMatchIdResultXML = response.getGetAllOddsByFixtureMatchIdResult().getContent();
 
-        Type listType = new TypeToken<List<GetOddsResultDto>>() {}.getType();
+        if (getOddsByFixtureMatchIdResultXML.getOddsList() == null)
+            return new ArrayList<>();
 
-        return modelMapper.map(getOddsByFixtureMatchIdResultXML.getOdds(),listType);
+        Type listType = new TypeToken<List<GetAllOddsResultDto>>() {
+        }.getType();
+
+        return modelMapper.map(getOddsByFixtureMatchIdResultXML.getOddsList().getOdds(), listType);
     }
 
     public List<GetOddsResultDto> getOddsByFixtureMatchId(Integer fixtureMatchId) {
@@ -243,9 +246,10 @@ public class XmlSoccerServiceImpl extends WebServiceGatewaySupport implements Xm
 
         GetOddsByFixtureMatchIdResultXML getOddsByFixtureMatchIdResultXML = response.getGetOddsByFixtureMatchIdResult().getContent();
 
-        Type listType = new TypeToken<List<GetOddsResultDto>>() {}.getType();
+        Type listType = new TypeToken<List<GetOddsResultDto>>() {
+        }.getType();
 
-        return modelMapper.map(getOddsByFixtureMatchIdResultXML.getOdds(),listType);
+        return modelMapper.map(getOddsByFixtureMatchIdResultXML.getOdds(), listType);
     }
 
     public List<GetOddsResultDto> getNextMatchOddsByLeague(String leagueName) {
@@ -261,9 +265,10 @@ public class XmlSoccerServiceImpl extends WebServiceGatewaySupport implements Xm
 
         GetOddsByFixtureMatchIdResultXML getOddsByFixtureMatchIdResultXML = response.getGetNextMatchOddsByLeagueResult().getContent();
 
-        Type listType = new TypeToken<List<GetOddsResultDto>>() {}.getType();
+        Type listType = new TypeToken<List<GetOddsResultDto>>() {
+        }.getType();
 
-        return modelMapper.map(getOddsByFixtureMatchIdResultXML.getOdds(),listType);
+        return modelMapper.map(getOddsByFixtureMatchIdResultXML.getOdds(), listType);
 
     }
 
@@ -280,10 +285,10 @@ public class XmlSoccerServiceImpl extends WebServiceGatewaySupport implements Xm
 
         GetTeamResultXML getTeamResultXML = response.getGetTeamResult().getContent();
 
-        if(getTeamResultXML.getTeam()==null)
+        if (getTeamResultXML.getTeam() == null)
             return null;
 
-        return modelMapper.map(getTeamResultXML.getTeam(),GetTeamResultDto.class);
+        return modelMapper.map(getTeamResultXML.getTeam(), GetTeamResultDto.class);
     }
 
     public List<GetTopScorersResultDto> getTopScorersByLeagueAndSeason(String leagueName, String season) {
@@ -300,9 +305,10 @@ public class XmlSoccerServiceImpl extends WebServiceGatewaySupport implements Xm
 
         GetTopScorersResultXML getTopScorersResultXML = response.getGetTopScorersByLeagueAndSeasonResult().getContent();
 
-        Type listType = new TypeToken<List<GetTopScorersResultDto>>() {}.getType();
+        Type listType = new TypeToken<List<GetTopScorersResultDto>>() {
+        }.getType();
 
-        return modelMapper.map(getTopScorersResultXML.getTopscorer(),listType);
+        return modelMapper.map(getTopScorersResultXML.getTopscorer(), listType);
     }
 
     public List<GetTopScorersResultDto> getTopScorersByGroupId(Integer group) {
@@ -318,9 +324,10 @@ public class XmlSoccerServiceImpl extends WebServiceGatewaySupport implements Xm
 
         GetTopScorersResultXML getTopScorersResultXML = response.getGetTopScorersByGroupIdResult().getContent();
 
-        Type listType = new TypeToken<List<GetTopScorersResultDto>>() {}.getType();
+        Type listType = new TypeToken<List<GetTopScorersResultDto>>() {
+        }.getType();
 
-        return modelMapper.map(getTopScorersResultXML.getTopscorer(),listType);
+        return modelMapper.map(getTopScorersResultXML.getTopscorer(), listType);
     }
 
     public List<GetFixturesResultDto> getFixturesByDateInterval(String startDate, String endDate) {
@@ -337,9 +344,10 @@ public class XmlSoccerServiceImpl extends WebServiceGatewaySupport implements Xm
 
         GetFixturesResultXML getFixturesResultXML = response.getGetFixturesByDateIntervalResult().getContent();
 
-        Type listType = new TypeToken<List<GetFixturesResultDto>>() {}.getType();
+        Type listType = new TypeToken<List<GetFixturesResultDto>>() {
+        }.getType();
 
-        return modelMapper.map(getFixturesResultXML.getMatch(),listType);
+        return modelMapper.map(getFixturesResultXML.getMatch(), listType);
     }
 
     public List<GetFixturesResultDto> getFixturesByDateIntervalAndLeague(String leagueName, String startDate, String endDate) {
@@ -357,9 +365,10 @@ public class XmlSoccerServiceImpl extends WebServiceGatewaySupport implements Xm
 
         GetFixturesResultXML getFixturesResultXML = response.getGetFixturesByDateIntervalAndLeagueResult().getContent();
 
-        Type listType = new TypeToken<List<GetFixturesResultDto>>() {}.getType();
+        Type listType = new TypeToken<List<GetFixturesResultDto>>() {
+        }.getType();
 
-        return modelMapper.map(getFixturesResultXML.getMatch(),listType);
+        return modelMapper.map(getFixturesResultXML.getMatch(), listType);
 
     }
 
@@ -378,9 +387,10 @@ public class XmlSoccerServiceImpl extends WebServiceGatewaySupport implements Xm
 
         GetFixturesResultXML getFixturesResultXML = response.getGetFixturesByDateIntervalAndTeamResult().getContent();
 
-        Type listType = new TypeToken<List<GetFixturesResultDto>>() {}.getType();
+        Type listType = new TypeToken<List<GetFixturesResultDto>>() {
+        }.getType();
 
-        return modelMapper.map(getFixturesResultXML.getMatch(),listType);
+        return modelMapper.map(getFixturesResultXML.getMatch(), listType);
 
     }
 
@@ -398,9 +408,10 @@ public class XmlSoccerServiceImpl extends WebServiceGatewaySupport implements Xm
 
         GetFixturesResultXML getFixturesResultXML = response.getGetFixturesByLeagueAndSeasonResult().getContent();
 
-        Type listType = new TypeToken<List<GetFixturesResultDto>>() {}.getType();
+        Type listType = new TypeToken<List<GetFixturesResultDto>>() {
+        }.getType();
 
-        return modelMapper.map(getFixturesResultXML.getMatch(),listType);
+        return modelMapper.map(getFixturesResultXML.getMatch(), listType);
     }
 
     public List<GetHistoricMatchesResultDto> getHistoricMatchesByFixtureMatchID(Integer fixtureMatchId) {
@@ -416,9 +427,10 @@ public class XmlSoccerServiceImpl extends WebServiceGatewaySupport implements Xm
 
         GetHistoricMatchesResultXML getHistoricMatchesResultXML = response.getGetHistoricMatchesByFixtureMatchIDResult().getContent();
 
-        Type listType = new TypeToken<List<GetHistoricMatchesResultDto>>() {}.getType();
+        Type listType = new TypeToken<List<GetHistoricMatchesResultDto>>() {
+        }.getType();
 
-        return modelMapper.map(getHistoricMatchesResultXML.getMatch(),listType);
+        return modelMapper.map(getHistoricMatchesResultXML.getMatch(), listType);
     }
 
     public List<GetHistoricMatchesResultDto> getHistoricMatchesByID(Integer matchId) {
@@ -434,16 +446,17 @@ public class XmlSoccerServiceImpl extends WebServiceGatewaySupport implements Xm
 
         GetHistoricMatchesResultXML getHistoricMatchesResultXML = response.getGetHistoricMatchesByIDResult().getContent();
 
-        Type listType = new TypeToken<List<GetHistoricMatchesResultDto>>() {}.getType();
+        Type listType = new TypeToken<List<GetHistoricMatchesResultDto>>() {
+        }.getType();
 
-        return modelMapper.map(getHistoricMatchesResultXML.getMatch(),listType);
+        return modelMapper.map(getHistoricMatchesResultXML.getMatch(), listType);
     }
 
     public List<GetHistoricMatchesResultDto> getHistoricMatchesByLeagueAndDateInterval(String leagueName, String startDate, String endDate) {
 
         GetHistoricMatchesByLeagueAndDateInterval request = new GetHistoricMatchesByLeagueAndDateInterval();
         request.setApiKey(apiKey);
-        request.setLeague(leagueName); 
+        request.setLeague(leagueName);
         request.setStartDateString(startDate);
         request.setEndDateString(endDate);
 
@@ -454,9 +467,10 @@ public class XmlSoccerServiceImpl extends WebServiceGatewaySupport implements Xm
 
         GetHistoricMatchesResultXML getHistoricMatchesResultXML = response.getGetHistoricMatchesByLeagueAndDateIntervalResult().getContent();
 
-        Type listType = new TypeToken<List<GetHistoricMatchesResultDto>>() {}.getType();
+        Type listType = new TypeToken<List<GetHistoricMatchesResultDto>>() {
+        }.getType();
 
-        return modelMapper.map(getHistoricMatchesResultXML.getMatch(),listType);
+        return modelMapper.map(getHistoricMatchesResultXML.getMatch(), listType);
     }
 
     public List<GetHistoricMatchesResultDto> getHistoricMatchesByLeagueAndSeason(String leagueName, String season) {
@@ -473,9 +487,10 @@ public class XmlSoccerServiceImpl extends WebServiceGatewaySupport implements Xm
 
         GetHistoricMatchesResultXML getHistoricMatchesResultXML = response.getGetHistoricMatchesByLeagueAndSeasonResult().getContent();
 
-        Type listType = new TypeToken<List<GetHistoricMatchesResultDto>>() {}.getType();
+        Type listType = new TypeToken<List<GetHistoricMatchesResultDto>>() {
+        }.getType();
 
-        return modelMapper.map(getHistoricMatchesResultXML.getMatch(),listType);
+        return modelMapper.map(getHistoricMatchesResultXML.getMatch(), listType);
     }
 
     public List<GetHistoricMatchesResultDto> getHistoricMatchesByTeamAndDateInterval(Integer team_id, String startDate, String endDate) {
@@ -493,9 +508,10 @@ public class XmlSoccerServiceImpl extends WebServiceGatewaySupport implements Xm
 
         GetHistoricMatchesResultXML getHistoricMatchesResultXML = response.getGetHistoricMatchesByTeamAndDateIntervalResult().getContent();
 
-        Type listType = new TypeToken<List<GetHistoricMatchesResultDto>>() {}.getType();
+        Type listType = new TypeToken<List<GetHistoricMatchesResultDto>>() {
+        }.getType();
 
-        return modelMapper.map(getHistoricMatchesResultXML.getMatch(),listType);
+        return modelMapper.map(getHistoricMatchesResultXML.getMatch(), listType);
     }
 
     public List<GetHistoricMatchesResultDto> getHistoricMatchesByTeamsAndDateInterval(Integer team_id1, Integer team_id2, String startDate, String endDate) {
@@ -514,9 +530,10 @@ public class XmlSoccerServiceImpl extends WebServiceGatewaySupport implements Xm
 
         GetHistoricMatchesResultXML getHistoricMatchesResultXML = response.getGetHistoricMatchesByTeamsAndDateIntervalResult().getContent();
 
-        Type listType = new TypeToken<List<GetHistoricMatchesResultDto>>() {}.getType();
+        Type listType = new TypeToken<List<GetHistoricMatchesResultDto>>() {
+        }.getType();
 
-        return modelMapper.map(getHistoricMatchesResultXML.getMatch(),listType);
+        return modelMapper.map(getHistoricMatchesResultXML.getMatch(), listType);
     }
 
     public XMLGregorianCalendar getEarliestMatchDatePerLeague(String leagueName) {
@@ -532,7 +549,7 @@ public class XmlSoccerServiceImpl extends WebServiceGatewaySupport implements Xm
 
         GetEarliestMatchDatePerLeagueXML getEarliestMatchDatePerLeagueXML = response.getGetEarliestMatchDatePerLeagueResult().getContent();
 
-        if(getEarliestMatchDatePerLeagueXML.getLeagueInformation()==null)
+        if (getEarliestMatchDatePerLeagueXML.getLeagueInformation() == null)
             return null;
 
         return getEarliestMatchDatePerLeagueXML.getLeagueInformation().getDate();

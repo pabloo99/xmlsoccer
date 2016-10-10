@@ -7,14 +7,10 @@ import lombok.NoArgsConstructor;
 import java.io.Serializable;
 import java.util.Date;
 
-/**
- * Created by pmazur on 2014-11-30.
- */
-
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class GetAllLeaguesResultDto implements Serializable{
+public class GetAllLeaguesResultDto implements Serializable {
 
     private int id;
     private String name;

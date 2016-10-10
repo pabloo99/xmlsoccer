@@ -6,8 +6,8 @@ import javax.xml.bind.annotation.*;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "team",
-    "accountInformation"
+        "team",
+        "accountInformation"
 })
 @XmlRootElement(name = "XMLSOCCER.COM")
 @Data
@@ -20,12 +20,12 @@ public class GetTeamResultXML {
 
     @XmlAccessorType(XmlAccessType.FIELD)
     @XmlType(name = "", propOrder = {
-        "id",
-        "name",
-        "stadium",
-        "website",
-        "wikiPageUrl",
-        "country"
+            "id",
+            "name",
+            "stadium",
+            "website",
+            "wikiPageUrl",
+            "country"
     })
     @Data
     public static class Team {

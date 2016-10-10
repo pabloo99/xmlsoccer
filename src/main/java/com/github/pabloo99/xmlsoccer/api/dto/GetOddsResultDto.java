@@ -5,14 +5,12 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.xml.datatype.XMLGregorianCalendar;
+import java.io.Serializable;
 
-/**
- * Created by pmazur on 2014-11-30.
- */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class GetOddsResultDto {
+public class GetOddsResultDto implements Serializable {
 
     private Integer id;
     private Integer fixtureMatchId;

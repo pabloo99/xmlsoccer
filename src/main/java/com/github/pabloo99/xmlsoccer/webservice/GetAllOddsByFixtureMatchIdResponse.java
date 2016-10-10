@@ -1,7 +1,7 @@
 
 package com.github.pabloo99.xmlsoccer.webservice;
 
-import com.github.pabloo99.xmlsoccer.model.xml.GetOddsByFixtureMatchIdResultXML;
+import com.github.pabloo99.xmlsoccer.model.xml.GetAllOddsXML;
 
 import javax.xml.bind.annotation.*;
 
@@ -45,8 +45,8 @@ public class GetAllOddsByFixtureMatchIdResponse {
     })
     public static class GetAllOddsByFixtureMatchIdResult {
 
-        @XmlElementRef(name="XMLSOCCER.COM", type=GetOddsByFixtureMatchIdResultXML.class)
-        protected GetOddsByFixtureMatchIdResultXML content;
+        @XmlElementRef(name="XMLSOCCER.COM", type=GetAllOddsXML.class)
+        protected GetAllOddsXML content;
 
         /**
          * Gets the value of the content property.
@@ -71,9 +71,9 @@ public class GetAllOddsByFixtureMatchIdResponse {
          * 
          * 
          */
-        public GetOddsByFixtureMatchIdResultXML getContent() {
+        public GetAllOddsXML getContent() {
             if (content == null) {
-                content = new GetOddsByFixtureMatchIdResultXML();
+                content = new GetAllOddsXML();
             }
             return this.content;
         }

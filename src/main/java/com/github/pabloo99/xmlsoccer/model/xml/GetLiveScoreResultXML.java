@@ -9,8 +9,8 @@ import java.util.List;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "match",
-    "accountInformation"
+        "match",
+        "accountInformation"
 })
 @XmlRootElement(name = "XMLSOCCER.COM")
 @Data
@@ -30,42 +30,42 @@ public class GetLiveScoreResultXML {
 
     @XmlAccessorType(XmlAccessType.FIELD)
     @XmlType(name = "", propOrder = {
-        "id",
-        "date",
-        "league",
-        "round",
-        "spectators",
-        "homeTeam",
-        "homeTeamId",
-        "awayTeam",
-        "awayTeamId",
-        "time",
-        "homeGoals",
-        "awayGoals",
-        "homeGoalDetails",
-        "awayGoalDetails",
-        "homeLineupGoalkeeper",
-        "awayLineupGoalkeeper",
-        "homeLineupDefense",
-        "awayLineupDefense",
-        "homeLineupMidfield",
-        "awayLineupMidfield",
-        "homeLineupForward",
-        "awayLineupForward",
-        "homeSubDetails",
-        "awaySubDetails",
-        "homeTeamFormation",
-        "awayTeamFormation",
-        "location",
-        "stadium",
-        "homeTeamYellowCardDetails",
-        "awayTeamYellowCardDetails",
-        "homeTeamRedCardDetails",
-        "awayTeamRedCardDetails",
-        "awayLineupCoach",
-        "homeLineupCoach",
-        "awayLineupSubstitutes",
-        "homeLineupSubstitutes"
+            "id",
+            "date",
+            "league",
+            "round",
+            "spectators",
+            "homeTeam",
+            "homeTeamId",
+            "awayTeam",
+            "awayTeamId",
+            "time",
+            "homeGoals",
+            "awayGoals",
+            "homeGoalDetails",
+            "awayGoalDetails",
+            "homeLineupGoalkeeper",
+            "awayLineupGoalkeeper",
+            "homeLineupDefense",
+            "awayLineupDefense",
+            "homeLineupMidfield",
+            "awayLineupMidfield",
+            "homeLineupForward",
+            "awayLineupForward",
+            "homeSubDetails",
+            "awaySubDetails",
+            "homeTeamFormation",
+            "awayTeamFormation",
+            "location",
+            "stadium",
+            "homeTeamYellowCardDetails",
+            "awayTeamYellowCardDetails",
+            "homeTeamRedCardDetails",
+            "awayTeamRedCardDetails",
+            "awayLineupCoach",
+            "homeLineupCoach",
+            "awayLineupSubstitutes",
+            "homeLineupSubstitutes"
     })
     @Data
     public static class Match {

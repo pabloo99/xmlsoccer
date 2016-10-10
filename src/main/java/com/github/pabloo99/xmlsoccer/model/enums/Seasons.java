@@ -20,15 +20,12 @@ public enum Seasons {
     SEASON_2012_2013("1213"),
     SEASON_2013_2014("1314"),
     SEASON_2014_2015("1415"),
-    SEASON_2015_2016("1516");
-
+    SEASON_2015_2016("1516"),
+    SEASON_2016_2017("1617");
 
     private final String text;
 
-    /**
-     * @param text
-     */
-    private Seasons(final String text) {
+    Seasons(final String text) {
         this.text = text;
     }
 

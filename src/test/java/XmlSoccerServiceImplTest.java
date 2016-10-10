@@ -41,7 +41,7 @@ public class XmlSoccerServiceImplTest extends AbstractTestNGSpringContextTests {
     public void testGetLeagueStandingsBySeason() throws Exception {
         List<GetLeagueStandingsResultDto> test = xmlSoccerService.getLeagueStandingsBySeason(Leagues.SCOTLAND_SCOTTISH_FIRST_DIVISION.getParam(), Seasons.SEASON_2014_2015.getParam());
 
-        Assert.isNull(test);
+        Assert.notNull(test);
 
     }
 
@@ -68,21 +68,21 @@ public class XmlSoccerServiceImplTest extends AbstractTestNGSpringContextTests {
 
     @Test
     public void testGetTopScorersByLeagueAndSeason() throws Exception {
-        List<GetTopScorersResultDto> test = xmlSoccerService.getTopScorersByLeagueAndSeason(Leagues.SCOTLAND_SCOTTISH_PREMIER_LEAGUE.getParam(),Seasons.SEASON_2014_2015.getParam());
+        List<GetTopScorersResultDto> test = xmlSoccerService.getTopScorersByLeagueAndSeason(Leagues.SCOTLAND_SCOTTISH_PREMIER_LEAGUE.getParam(), Seasons.SEASON_2014_2015.getParam());
 
         Assert.notNull(test);
     }
 
     @Test
     public void testGetFixturesByLeagueAndSeason() throws Exception {
-        List<GetFixturesResultDto> test = xmlSoccerService.getFixturesByLeagueAndSeason(Leagues.SCOTLAND_SCOTTISH_PREMIER_LEAGUE.getParam(),Seasons.SEASON_2014_2015.getParam());
+        List<GetFixturesResultDto> test = xmlSoccerService.getFixturesByLeagueAndSeason(Leagues.SCOTLAND_SCOTTISH_PREMIER_LEAGUE.getParam(), Seasons.SEASON_2014_2015.getParam());
 
         Assert.notNull(test);
     }
 
     @Test
     public void testGetHistoricMatchesByLeagueAndSeason() throws Exception {
-        List<GetHistoricMatchesResultDto> test = xmlSoccerService.getHistoricMatchesByLeagueAndSeason(Leagues.SCOTLAND_SCOTTISH_PREMIER_LEAGUE.getParam(),Seasons.SEASON_2014_2015.getParam());
+        List<GetHistoricMatchesResultDto> test = xmlSoccerService.getHistoricMatchesByLeagueAndSeason(Leagues.SCOTLAND_SCOTTISH_PREMIER_LEAGUE.getParam(), Seasons.SEASON_2014_2015.getParam());
 
         Assert.notNull(test);
     }
@@ -103,7 +103,7 @@ public class XmlSoccerServiceImplTest extends AbstractTestNGSpringContextTests {
 
     @Test
     public void testGetAllTeamsByLeagueAndSeason() throws Exception {
-        List<GetTeamResultDto> test = xmlSoccerService.getAllTeamsByLeagueAndSeason(Leagues.SCOTLAND_SCOTTISH_PREMIER_LEAGUE.getParam(),Seasons.SEASON_2012_2013.getParam());
+        List<GetTeamResultDto> test = xmlSoccerService.getAllTeamsByLeagueAndSeason(Leagues.SCOTLAND_SCOTTISH_PREMIER_LEAGUE.getParam(), Seasons.SEASON_2012_2013.getParam());
 
         Assert.notNull(test);
     }
@@ -123,9 +123,9 @@ public class XmlSoccerServiceImplTest extends AbstractTestNGSpringContextTests {
     }
 
     @Test
-    public void testGetEatliestMatchDatePerLeague() throws Exception {
-        XMLGregorianCalendar test = xmlSoccerService.getEarliestMatchDatePerLeague(Leagues.SCOTLAND_SCOTTISH_PREMIER_LEAGUE.getParam());
+    public void testGetAllOddsByFixtureMatchId() throws Exception {
+        List<GetAllOddsResultDto> test = xmlSoccerService.getAllOddsByFixtureMatchId(362894);
 
-        Assert.isNull(test);
+        Assert.notNull(test);
     }
 }

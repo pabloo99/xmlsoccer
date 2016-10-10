@@ -4,15 +4,12 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-
-/**
- * Created by pmazur on 2014-11-30.
- */
+import java.io.Serializable;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class GetTopScorersResultDto {
+public class GetTopScorersResultDto implements Serializable {
 
     private int rank;
     private String name;

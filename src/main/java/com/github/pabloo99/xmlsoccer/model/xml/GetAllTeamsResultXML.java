@@ -8,8 +8,8 @@ import java.util.List;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "team",
-    "accountInformation"
+        "team",
+        "accountInformation"
 })
 @XmlRootElement(name = "XMLSOCCER.COM")
 @Data
@@ -29,12 +29,12 @@ public class GetAllTeamsResultXML {
 
     @XmlAccessorType(XmlAccessType.FIELD)
     @XmlType(name = "", propOrder = {
-        "teamId",
-        "name",
-        "country",
-        "stadium",
-        "homePageURL",
-        "wikiLink"
+            "teamId",
+            "name",
+            "country",
+            "stadium",
+            "homePageURL",
+            "wikiLink"
     })
     @Data
     public static class Team {

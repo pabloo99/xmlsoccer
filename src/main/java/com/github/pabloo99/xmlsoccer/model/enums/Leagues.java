@@ -33,21 +33,13 @@ public enum Leagues {
     UKRAINE_UKRAINIAN_PREMIER_LEAGUE("Ukrainian Premier League"),
     RUSSIA_RUSSIAN_FOOTBALL_PREMIER_LEAGUE_("Russian Football Premier League "),
     AUSTRALIA_AUSTRALIAN_A_LEAGUE("Australian A-League"),
-    INTERNATIONAL_WORLD_CUP_2014("World Cup 2014")
-    ;
+    INTERNATIONAL_WORLD_CUP_2014("World Cup 2014");
 
     private final String text;
 
-    /**
-     * @param text
-     */
-    private Leagues(final String text) {
+    Leagues(final String text) {
         this.text = text;
     }
-
-    /* (non-Javadoc)
-     * @see java.lang.Enum#toString()
-     */
 
     public String getParam() {
         return text;

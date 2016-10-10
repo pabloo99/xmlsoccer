@@ -4,13 +4,12 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-/**
- * Created by pmazur on 2014-11-30.
- */
+import java.io.Serializable;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class GetTeamResultDto {
+public class GetTeamResultDto implements Serializable {
 
     private int teamId;
     private String name;

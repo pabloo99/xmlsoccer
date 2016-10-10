@@ -7,14 +7,10 @@ import lombok.NoArgsConstructor;
 import java.io.Serializable;
 import java.util.Date;
 
-/**
- * Created by pmazur on 2014-11-30.
- */
-
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class GetLiveScoreResultDto implements Serializable{
+public class GetLiveScoreResultDto implements Serializable {
 
     private int id;
     private Date date;
