@@ -4,10 +4,12 @@ package com.github.pabloo99.xmlsoccer.webservice;
 import com.github.pabloo99.xmlsoccer.model.xml.GetTeamResultXML;
 
 import javax.xml.bind.annotation.*;
+import java.util.Collections;
+import java.util.Optional;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "getTeamResult"
+        "getTeamResult"
 })
 @XmlRootElement(name = "GetTeamResponse")
 public class GetTeamResponse {
@@ -18,10 +20,8 @@ public class GetTeamResponse {
     /**
      * Gets the value of the getTeamResult property.
      *
-     * @return
-     *     possible object is
-     *     {@link GetTeamResponse.GetTeamResult }
-     *
+     * @return possible object is
+     * {@link GetTeamResponse.GetTeamResult }
      */
     public GetTeamResponse.GetTeamResult getGetTeamResult() {
         return getTeamResult;
@@ -30,10 +30,8 @@ public class GetTeamResponse {
     /**
      * Sets the value of the getTeamResult property.
      *
-     * @param value
-     *     allowed object is
-     *     {@link GetTeamResponse.GetTeamResult }
-     *
+     * @param value allowed object is
+     *              {@link GetTeamResponse.GetTeamResult }
      */
     public void setGetTeamResult(GetTeamResponse.GetTeamResult value) {
         this.getTeamResult = value;
@@ -41,37 +39,33 @@ public class GetTeamResponse {
 
     public static class GetTeamResult {
 
-        @XmlElementRef(name="XMLSOCCER.COM", type=GetTeamResultXML.class)
+        @XmlElementRef(name = "XMLSOCCER.COM", type = GetTeamResultXML.class)
         protected GetTeamResultXML content;
 
         /**
          * Gets the value of the content property.
-         * 
+         * <p>
          * <p>
          * This accessor method returns a reference to the live list,
          * not a snapshot. Therefore any modification you make to the
          * returned list will be present inside the JAXB object.
          * This is why there is not a <CODE>set</CODE> method for the content property.
-         * 
+         * <p>
          * <p>
          * For example, to add a new item, do as follows:
          * <pre>
          *    getContent().add(newItem);
          * </pre>
-         * 
-         * 
+         * <p>
+         * <p>
          * <p>
          * Objects of the following type(s) are allowed in the list
          * {@link Object }
          * {@link String }
-         * 
-         * 
          */
         public GetTeamResultXML getContent() {
-            if (content == null) {
-                content = new GetTeamResultXML();
-            }
-            return this.content;
+            return Optional.ofNullable(content).
+                    orElse(new GetTeamResultXML());
         }
 
     }

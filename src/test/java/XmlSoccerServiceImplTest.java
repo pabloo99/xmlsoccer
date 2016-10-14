@@ -10,7 +10,9 @@ import com.github.pabloo99.xmlsoccer.model.enums.Leagues;
 import com.github.pabloo99.xmlsoccer.model.enums.Seasons;
 
 import javax.xml.datatype.XMLGregorianCalendar;
+import java.util.Collection;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @ContextConfiguration(locations = {"classpath:/spring/core-context-test.xml"})
 @Slf4j
@@ -22,7 +24,9 @@ public class XmlSoccerServiceImplTest extends AbstractTestNGSpringContextTests {
     @Test
     public void testGetLiveScore() throws Exception {
 
-        List<GetLiveScoreResultDto> test = xmlSoccerService.getLiveScore();
+        List<GetLiveScoreResultDto> test = xmlSoccerService.getLiveScore().
+                stream().
+                collect(Collectors.toList());
 
         Assert.notNull(test);
 
@@ -31,7 +35,8 @@ public class XmlSoccerServiceImplTest extends AbstractTestNGSpringContextTests {
 
     @Test
     public void testGetLiveScoreByLeague() throws Exception {
-        List<GetLiveScoreResultDto> test = xmlSoccerService.getLiveScoreByLeague(Leagues.SCOTLAND_SCOTTISH_FIRST_DIVISION.getParam());
+        Collection<GetLiveScoreResultDto> test =
+                xmlSoccerService.getLiveScoreByLeague(Leagues.SCOTLAND_SCOTTISH_FIRST_DIVISION.getParam());
 
         Assert.notNull(test);
         log.info(test.toString());
@@ -39,7 +44,10 @@ public class XmlSoccerServiceImplTest extends AbstractTestNGSpringContextTests {
 
     @Test
     public void testGetLeagueStandingsBySeason() throws Exception {
-        List<GetLeagueStandingsResultDto> test = xmlSoccerService.getLeagueStandingsBySeason(Leagues.SCOTLAND_SCOTTISH_FIRST_DIVISION.getParam(), Seasons.SEASON_2014_2015.getParam());
+        List<GetLeagueStandingsResultDto> test = xmlSoccerService.getLeagueStandingsBySeason(
+                Leagues.SCOTLAND_SCOTTISH_FIRST_DIVISION.getParam(), Seasons.SEASON_2014_2015.getParam()).
+                stream().
+                collect(Collectors.toList());
 
         Assert.notNull(test);
 
@@ -47,14 +55,18 @@ public class XmlSoccerServiceImplTest extends AbstractTestNGSpringContextTests {
 
     @Test
     public void testGetAllLeagues() throws Exception {
-        List<GetAllLeaguesResultDto> test = xmlSoccerService.getAllLeagues();
+        List<GetAllLeaguesResultDto> test = xmlSoccerService.getAllLeagues().
+                stream().
+                collect(Collectors.toList());
 
         Assert.notNull(test);
     }
 
     @Test
     public void testGetPlayersByTeamId() throws Exception {
-        List<GetPlayersResultDto> test = xmlSoccerService.getPlayersByTeam(52);
+        List<GetPlayersResultDto> test = xmlSoccerService.getPlayersByTeam(52).
+                stream().
+                collect(Collectors.toList());
 
         Assert.notNull(test);
     }
@@ -68,42 +80,59 @@ public class XmlSoccerServiceImplTest extends AbstractTestNGSpringContextTests {
 
     @Test
     public void testGetTopScorersByLeagueAndSeason() throws Exception {
-        List<GetTopScorersResultDto> test = xmlSoccerService.getTopScorersByLeagueAndSeason(Leagues.SCOTLAND_SCOTTISH_PREMIER_LEAGUE.getParam(), Seasons.SEASON_2014_2015.getParam());
+        List<GetTopScorersResultDto> test =
+                xmlSoccerService.getTopScorersByLeagueAndSeason(
+                        Leagues.SCOTLAND_SCOTTISH_PREMIER_LEAGUE.getParam(), Seasons.SEASON_2014_2015.getParam()).
+                        stream().
+                        collect(Collectors.toList());
 
         Assert.notNull(test);
     }
 
     @Test
     public void testGetFixturesByLeagueAndSeason() throws Exception {
-        List<GetFixturesResultDto> test = xmlSoccerService.getFixturesByLeagueAndSeason(Leagues.SCOTLAND_SCOTTISH_PREMIER_LEAGUE.getParam(), Seasons.SEASON_2014_2015.getParam());
+        List<GetFixturesResultDto> test = xmlSoccerService.getFixturesByLeagueAndSeason(
+                Leagues.SCOTLAND_SCOTTISH_PREMIER_LEAGUE.getParam(), Seasons.SEASON_2014_2015.getParam()).
+                stream().
+                collect(Collectors.toList());
 
         Assert.notNull(test);
     }
 
     @Test
     public void testGetHistoricMatchesByLeagueAndSeason() throws Exception {
-        List<GetHistoricMatchesResultDto> test = xmlSoccerService.getHistoricMatchesByLeagueAndSeason(Leagues.SCOTLAND_SCOTTISH_PREMIER_LEAGUE.getParam(), Seasons.SEASON_2014_2015.getParam());
+        List<GetHistoricMatchesResultDto> test = xmlSoccerService.getHistoricMatchesByLeagueAndSeason(
+                Leagues.SCOTLAND_SCOTTISH_PREMIER_LEAGUE.getParam(), Seasons.SEASON_2014_2015.getParam()).
+                stream().
+                collect(Collectors.toList());
 
         Assert.notNull(test);
     }
 
     @Test
     public void testGetNextOddsByLeague() throws Exception {
-        List<GetOddsResultDto> test = xmlSoccerService.getNextMatchOddsByLeague(Leagues.SCOTLAND_SCOTTISH_PREMIER_LEAGUE.getParam());
+        List<GetOddsResultDto> test = xmlSoccerService.getNextMatchOddsByLeague(
+                Leagues.SCOTLAND_SCOTTISH_PREMIER_LEAGUE.getParam()).stream().
+                collect(Collectors.toList());
 
         Assert.notNull(test);
     }
 
     @Test
     public void testGetAllTeams() throws Exception {
-        List<GetTeamResultDto> test = xmlSoccerService.getAllTeams();
+        List<GetTeamResultDto> test = xmlSoccerService.getAllTeams().
+                stream().
+                collect(Collectors.toList());
 
         Assert.notNull(test);
     }
 
     @Test
     public void testGetAllTeamsByLeagueAndSeason() throws Exception {
-        List<GetTeamResultDto> test = xmlSoccerService.getAllTeamsByLeagueAndSeason(Leagues.SCOTLAND_SCOTTISH_PREMIER_LEAGUE.getParam(), Seasons.SEASON_2012_2013.getParam());
+        List<GetTeamResultDto> test = xmlSoccerService.getAllTeamsByLeagueAndSeason(
+                Leagues.SCOTLAND_SCOTTISH_PREMIER_LEAGUE.getParam(), Seasons.SEASON_2012_2013.getParam()).
+                stream().
+                collect(Collectors.toList());
 
         Assert.notNull(test);
     }
@@ -124,7 +153,9 @@ public class XmlSoccerServiceImplTest extends AbstractTestNGSpringContextTests {
 
     @Test
     public void testGetAllOddsByFixtureMatchId() throws Exception {
-        List<GetAllOddsResultDto> test = xmlSoccerService.getAllOddsByFixtureMatchId(362894);
+        List<GetAllOddsResultDto> test = xmlSoccerService.getAllOddsByFixtureMatchId(362894).
+                stream().
+                collect(Collectors.toList());
 
         Assert.notNull(test);
     }

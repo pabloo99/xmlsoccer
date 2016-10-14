@@ -5,7 +5,9 @@ import lombok.Data;
 import javax.xml.bind.annotation.*;
 import javax.xml.datatype.XMLGregorianCalendar;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
+import java.util.Optional;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
@@ -19,10 +21,8 @@ public class GetOddsByFixtureMatchIdResultXML {
     protected List<Odds> odds;
 
     public List<Odds> getOdds() {
-        if (odds == null) {
-            odds = new ArrayList<Odds>();
-        }
-        return this.odds;
+        return Optional.ofNullable(odds).
+                orElse(Collections.emptyList());
     }
 
     @XmlAccessorType(XmlAccessType.FIELD)

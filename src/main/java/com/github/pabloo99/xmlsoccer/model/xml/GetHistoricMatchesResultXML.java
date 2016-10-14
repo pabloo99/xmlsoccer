@@ -3,9 +3,7 @@ package com.github.pabloo99.xmlsoccer.model.xml;
 import lombok.Data;
 
 import javax.xml.bind.annotation.*;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
@@ -18,10 +16,8 @@ public class GetHistoricMatchesResultXML {
     protected List<Match> match;
 
     public List<Match> getMatch() {
-        if (match == null) {
-            match = new ArrayList<Match>();
-        }
-        return this.match;
+        return Optional.ofNullable(match).
+                orElse(Collections.emptyList());
     }
 
     @XmlAccessorType(XmlAccessType.FIELD)

@@ -3,7 +3,9 @@ package com.github.pabloo99.xmlsoccer.model.xml;
 import lombok.Data;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -26,6 +28,11 @@ public class GetAllOddsXML {
     @XmlElement(name = "AccountInformation", required = true)
     protected String accountInformation;
 
+    public OddsList getOddsList() {
+        return Optional.ofNullable(oddsList).
+                orElse(new OddsList());
+    }
+
     @XmlAccessorType(XmlAccessType.FIELD)
     @XmlType(name = "", propOrder = {
             "odds"
@@ -36,10 +43,8 @@ public class GetAllOddsXML {
         protected List<Odds> odds;
 
         public List<Odds> getOdds() {
-            if (odds == null) {
-                odds = new ArrayList<>();
-            }
-            return this.odds;
+            return Optional.ofNullable(odds).
+                    orElse(Collections.emptyList());
         }
 
         @XmlAccessorType(XmlAccessType.FIELD)

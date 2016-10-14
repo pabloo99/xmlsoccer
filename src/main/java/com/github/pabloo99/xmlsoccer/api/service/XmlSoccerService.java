@@ -3,7 +3,7 @@ package com.github.pabloo99.xmlsoccer.api.service;
 import com.github.pabloo99.xmlsoccer.api.dto.*;
 
 import javax.xml.datatype.XMLGregorianCalendar;
-import java.util.List;
+import java.util.Collection;
 
 public interface XmlSoccerService {
 
@@ -11,55 +11,55 @@ public interface XmlSoccerService {
 
     void setApiKey(String apiKey);
 
-    String checkApiKey(String ApiKey);
+    String checkApiKey(String apiKey);
 
-    List<GetLiveScoreResultDto> getLiveScore();
+    Collection<GetLiveScoreResultDto> getLiveScore();
 
-    List<GetLiveScoreResultDto> getLiveScoreByLeague(String leagueName);
+    Collection<GetLiveScoreResultDto> getLiveScoreByLeague(String leagueName);
 
-    List<GetLeagueStandingsResultDto> getLeagueStandingsBySeason(String leagueName, String season);
+    Collection<GetLeagueStandingsResultDto> getLeagueStandingsBySeason(String leagueName, String season);
 
-    List<GetAllLeaguesResultDto> getAllLeagues();
+    Collection<GetAllLeaguesResultDto> getAllLeagues();
 
     XMLGregorianCalendar getEarliestMatchDatePerLeague(String leagueName);
 
-    List<GetTeamResultDto> getAllTeams();
+    Collection<GetTeamResultDto> getAllTeams();
 
-    List<GetTeamResultDto> getAllTeamsByLeagueAndSeason(String leagueName, String season);
+    Collection<GetTeamResultDto> getAllTeamsByLeagueAndSeason(String leagueName, String season);
 
     GetPlayersResultDto getPlayersById(Integer playerId);
 
-    List<GetPlayersResultDto> getPlayersByTeam(Integer teamId);
+    Collection<GetPlayersResultDto> getPlayersByTeam(Integer teamId);
 
-    List<GetAllOddsResultDto> getAllOddsByFixtureMatchId(Integer fixtureMatchId);
+    Collection<GetAllOddsResultDto> getAllOddsByFixtureMatchId(Integer fixtureMatchId);
 
-    List<GetOddsResultDto> getOddsByFixtureMatchId(Integer fixtureMatchId);
+    Collection<GetOddsResultDto> getOddsByFixtureMatchId(Integer fixtureMatchId);
 
-    List<GetOddsResultDto> getNextMatchOddsByLeague(String leagueName);
+    Collection<GetOddsResultDto> getNextMatchOddsByLeague(String leagueName);
 
     GetTeamResultDto getTeam(String teamName);
 
-    List<GetTopScorersResultDto> getTopScorersByLeagueAndSeason(String leagueName, String season);
+    Collection<GetTopScorersResultDto> getTopScorersByLeagueAndSeason(String leagueName, String season);
 
-    List<GetTopScorersResultDto> getTopScorersByGroupId(Integer group);
+    Collection<GetTopScorersResultDto> getTopScorersByGroupId(Integer group);
 
-    List<GetFixturesResultDto> getFixturesByDateInterval(String startDate, String endDate);
+    Collection<GetFixturesResultDto> getFixturesByDateInterval(String startDate, String endDate);
 
-    List<GetFixturesResultDto> getFixturesByDateIntervalAndLeague(String leagueName, String startDate, String endDate);
+    Collection<GetFixturesResultDto> getFixturesByDateIntervalAndLeague(String leagueName, String startDate, String endDate);
 
-    List<GetFixturesResultDto> getFixturesByDateIntervalAndTeam(Integer team_id, String startDate, String endDate);
+    Collection<GetFixturesResultDto> getFixturesByDateIntervalAndTeam(Integer teamId, String startDate, String endDate);
 
-    List<GetFixturesResultDto> getFixturesByLeagueAndSeason(String leagueName, String season);
+    Collection<GetFixturesResultDto> getFixturesByLeagueAndSeason(String leagueName, String season);
 
-    List<GetHistoricMatchesResultDto> getHistoricMatchesByFixtureMatchID(Integer fixtureMatchId);
+    Collection<GetHistoricMatchesResultDto> getHistoricMatchesByFixtureMatchID(Integer fixtureMatchId);
 
-    List<GetHistoricMatchesResultDto> getHistoricMatchesByID(Integer matchId);
+    Collection<GetHistoricMatchesResultDto> getHistoricMatchesByID(Integer matchId);
 
-    List<GetHistoricMatchesResultDto> getHistoricMatchesByLeagueAndDateInterval(String leagueName, String startDate, String endDate);
+    Collection<GetHistoricMatchesResultDto> getHistoricMatchesByLeagueAndDateInterval(String leagueName, String startDate, String endDate);
 
-    List<GetHistoricMatchesResultDto> getHistoricMatchesByLeagueAndSeason(String leagueName, String season);
+    Collection<GetHistoricMatchesResultDto> getHistoricMatchesByLeagueAndSeason(String leagueName, String season);
 
-    List<GetHistoricMatchesResultDto> getHistoricMatchesByTeamAndDateInterval(Integer team_id, String startDate, String endDate);
+    Collection<GetHistoricMatchesResultDto> getHistoricMatchesByTeamAndDateInterval(Integer teamId, String startDate, String endDate);
 
-    List<GetHistoricMatchesResultDto> getHistoricMatchesByTeamsAndDateInterval(Integer team_id1, Integer team_id2, String startDate, String endDate);
+    Collection<GetHistoricMatchesResultDto> getHistoricMatchesByTeamsAndDateInterval(Integer teamId1, Integer teamId2, String startDate, String endDate);
 }

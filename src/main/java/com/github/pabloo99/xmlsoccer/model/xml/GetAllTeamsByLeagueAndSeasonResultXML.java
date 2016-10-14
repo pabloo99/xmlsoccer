@@ -4,7 +4,9 @@ import lombok.Data;
 
 import javax.xml.bind.annotation.*;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
+import java.util.Optional;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
@@ -21,10 +23,8 @@ public class GetAllTeamsByLeagueAndSeasonResultXML {
     protected String accountInformation;
 
     public List<Team> getTeam() {
-        if (team == null) {
-            team = new ArrayList<Team>();
-        }
-        return this.team;
+        return Optional.ofNullable(team).
+                orElse(Collections.emptyList());
     }
 
     @XmlAccessorType(XmlAccessType.FIELD)

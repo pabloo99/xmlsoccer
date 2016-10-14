@@ -3,7 +3,10 @@ package com.github.pabloo99.xmlsoccer.model.xml;
 import lombok.Data;
 
 import javax.xml.bind.annotation.*;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
+import java.util.Optional;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
@@ -18,6 +21,11 @@ public class GetLeagueStandingsBySeasonResultXML {
     protected List<TeamLeagueStanding> teamLeagueStanding;
     @XmlElement(name = "AccountInformation", required = true)
     protected String accountInformation;
+
+    public List<TeamLeagueStanding> getTeamLeagueStanding() {
+        return Optional.ofNullable(teamLeagueStanding).
+                orElse(Collections.emptyList());
+    }
 
     @XmlAccessorType(XmlAccessType.FIELD)
     @XmlType(name = "", propOrder = {

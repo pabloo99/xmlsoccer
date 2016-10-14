@@ -4,7 +4,9 @@ import lombok.Data;
 
 import javax.xml.bind.annotation.*;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
+import java.util.Optional;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
@@ -21,10 +23,8 @@ public class GetTopScorersResultXML {
     protected String accountInformation;
 
     public List<Topscorer> getTopscorer() {
-        if (topscorer == null) {
-            topscorer = new ArrayList<Topscorer>();
-        }
-        return this.topscorer;
+        return Optional.ofNullable(topscorer).
+                orElse(Collections.emptyList());
     }
 
     @XmlAccessorType(XmlAccessType.FIELD)

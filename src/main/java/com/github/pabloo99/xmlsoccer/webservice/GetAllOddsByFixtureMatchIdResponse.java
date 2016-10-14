@@ -2,8 +2,10 @@
 package com.github.pabloo99.xmlsoccer.webservice;
 
 import com.github.pabloo99.xmlsoccer.model.xml.GetAllOddsXML;
+import com.github.pabloo99.xmlsoccer.model.xml.GetPlayersByTeamResultXML;
 
 import javax.xml.bind.annotation.*;
+import java.util.Optional;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
@@ -72,10 +74,8 @@ public class GetAllOddsByFixtureMatchIdResponse {
          * 
          */
         public GetAllOddsXML getContent() {
-            if (content == null) {
-                content = new GetAllOddsXML();
-            }
-            return this.content;
+            return Optional.ofNullable(content).
+                    orElse(new GetAllOddsXML());
         }
 
     }

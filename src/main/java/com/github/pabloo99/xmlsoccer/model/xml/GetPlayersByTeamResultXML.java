@@ -3,9 +3,7 @@ package com.github.pabloo99.xmlsoccer.model.xml;
 import lombok.Data;
 
 import javax.xml.bind.annotation.*;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
@@ -22,10 +20,8 @@ public class GetPlayersByTeamResultXML {
     protected String accountInformation;
 
     public List<Player> getPlayer() {
-        if (player == null) {
-            player = new ArrayList<Player>();
-        }
-        return this.player;
+        return Optional.ofNullable(player).
+                orElse(Collections.emptyList());
     }
 
     @XmlAccessorType(XmlAccessType.FIELD)
