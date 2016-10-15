@@ -307,7 +307,7 @@ public class XmlSoccerServiceImpl extends WebServiceGatewaySupport implements Xm
                 response.getGetTeamResult().getContent().getTeam());
 
         if (getTeam.isPresent())
-            return modelMapper.map(getTeam, GetTeamResultDto.class);
+            return modelMapper.map(getTeam.get(), GetTeamResultDto.class);
 
         return null;
     }

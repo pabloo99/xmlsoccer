@@ -1,8 +1,5 @@
 package com.github.pabloo99.xmlsoccer.model.enums;
 
-/**
- * Created by pmazur on 2014-12-17.
- */
 public enum Seasons {
     SEASON_1999_2000("9900"),
     SEASON_2000_2001("0001"),

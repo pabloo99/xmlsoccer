@@ -45,7 +45,8 @@ public interface XmlSoccerService {
 
     Collection<GetFixturesResultDto> getFixturesByDateInterval(String startDate, String endDate);
 
-    Collection<GetFixturesResultDto> getFixturesByDateIntervalAndLeague(String leagueName, String startDate, String endDate);
+    Collection<GetFixturesResultDto> getFixturesByDateIntervalAndLeague(String leagueName, String startDate,
+                                                                        String endDate);
 
     Collection<GetFixturesResultDto> getFixturesByDateIntervalAndTeam(Integer teamId, String startDate, String endDate);
 
@@ -55,11 +56,14 @@ public interface XmlSoccerService {
 
     Collection<GetHistoricMatchesResultDto> getHistoricMatchesByID(Integer matchId);
 
-    Collection<GetHistoricMatchesResultDto> getHistoricMatchesByLeagueAndDateInterval(String leagueName, String startDate, String endDate);
+    Collection<GetHistoricMatchesResultDto> getHistoricMatchesByLeagueAndDateInterval(String leagueName, String startDate,
+                                                                                      String endDate);
 
     Collection<GetHistoricMatchesResultDto> getHistoricMatchesByLeagueAndSeason(String leagueName, String season);
 
-    Collection<GetHistoricMatchesResultDto> getHistoricMatchesByTeamAndDateInterval(Integer teamId, String startDate, String endDate);
+    Collection<GetHistoricMatchesResultDto> getHistoricMatchesByTeamAndDateInterval(Integer teamId, String startDate,
+                                                                                    String endDate);
 
-    Collection<GetHistoricMatchesResultDto> getHistoricMatchesByTeamsAndDateInterval(Integer teamId1, Integer teamId2, String startDate, String endDate);
+    Collection<GetHistoricMatchesResultDto> getHistoricMatchesByTeamsAndDateInterval(Integer teamId1, Integer teamId2,
+                                                                                     String startDate, String endDate);
 }
