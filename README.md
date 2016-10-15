@@ -39,9 +39,6 @@ import com.github.pabloo99.xmlsoccer.model.enums.Seasons;
 
 import java.util.List;
 
-/**
- * Created by pmazur on 2014-11-30.
- */
 public class Main {
 
     public static void main(String[] args)
@@ -58,18 +55,29 @@ public class Main {
         GetTeamResultDto getTeamResultDto = xmlSoccerService.getTeam("Celtic");
         System.out.println(getTeamResultDto.toString());
 
-        List<GetLiveScoreResultDto> getLiveScoreResultDto = xmlSoccerService.getLiveScore();
+        List<GetLiveScoreResultDto> getLiveScoreResultDto = xmlSoccerService.getLiveScore().
+                                                                             stream().
+                                                                             collect(Collectors.toList());
         System.out.println(getLiveScoreResultDto.toString());
 
-        List<GetLeagueStandingsResultDto> getLeagueStandingsResultDtoList = xmlSoccerService.getLeagueStandingsBySeason("Scottish Premier League", "1415");
+        List<GetLeagueStandingsResultDto> getLeagueStandingsResultDtoList =
+                                    xmlSoccerService.getLeagueStandingsBySeason("Scottish Premier League", "1415").
+                                                     stream().
+                                                     collect(Collectors.toList());
+
         System.out.println(getLeagueStandingsResultDtoList.toString());
 
         /* to pass in a parameter the name of the league or the season,
         ** you can use specially prepared enumerated type,
-        ** which can be found in the package pl.com.pablo.xmlsoccer.model.enums
+        ** which can be found in the package pl.com.pabloo99.xmlsoccer.model.enums
         **
         ** example:
-        ** List<GetLeagueStandingsResultDto> getLeagueStandingsResultDtoList = xmlSoccerService.getLeagueStandingsBySeason(Leagues.SCOTLAND_SCOTTISH_PREMIER_LEAGUE.getParam(), Seasons.SEASON_2014_2015.getParam());
+        ** List<GetLeagueStandingsResultDto> getLeagueStandingsResultDtoList = xmlSoccerService.
+                                    getLeagueStandingsBySeason(Leagues.SCOTTISH_PREMIER_LEAGUE.getParam(),
+                                                               Seasons.SEASON_2014_2015.getParam()).
+                                    stream().
+                                    collect(Collectors.toList());
+
         ** System.out.println(getLeagueStandingsResultDtoList.toString());
         */
 

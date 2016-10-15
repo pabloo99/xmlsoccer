@@ -2,7 +2,6 @@
 package com.github.pabloo99.xmlsoccer.webservice;
 
 import com.github.pabloo99.xmlsoccer.model.xml.GetAllOddsXML;
-import com.github.pabloo99.xmlsoccer.model.xml.GetPlayersByTeamResultXML;
 
 import javax.xml.bind.annotation.*;
 import java.util.Optional;

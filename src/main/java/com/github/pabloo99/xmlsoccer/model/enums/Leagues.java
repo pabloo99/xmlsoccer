@@ -3,7 +3,7 @@ package com.github.pabloo99.xmlsoccer.model.enums;
 public enum Leagues {
     ENGLISH_PREMIER_LEAGUE("English Premier League"),
     ENGLISH_LEAGUE_CHAMPIONSHIP("English League Championship"),
-    SCOTLAND_SCOTTISH_PREMIER_LEAGUE("Scottish Premier League"),
+    SCOTTISH_PREMIER_LEAGUE("Scottish Premier League"),
     BUNDESLIGA("Bundesliga"),
     SERIE_A("Serie A"),
     SERIE_B("Serie B"),

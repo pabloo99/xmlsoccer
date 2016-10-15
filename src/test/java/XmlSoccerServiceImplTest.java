@@ -1,15 +1,14 @@
+import com.github.pabloo99.xmlsoccer.api.dto.*;
+import com.github.pabloo99.xmlsoccer.api.service.XmlSoccerService;
+import com.github.pabloo99.xmlsoccer.model.enums.Leagues;
+import com.github.pabloo99.xmlsoccer.model.enums.Seasons;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
 import org.springframework.util.Assert;
 import org.testng.annotations.Test;
-import com.github.pabloo99.xmlsoccer.api.dto.*;
-import com.github.pabloo99.xmlsoccer.api.service.XmlSoccerService;
-import com.github.pabloo99.xmlsoccer.model.enums.Leagues;
-import com.github.pabloo99.xmlsoccer.model.enums.Seasons;
 
-import javax.xml.datatype.XMLGregorianCalendar;
 import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -36,7 +35,7 @@ public class XmlSoccerServiceImplTest extends AbstractTestNGSpringContextTests {
     @Test
     public void testGetLiveScoreByLeague() throws Exception {
         Collection<GetLiveScoreResultDto> test =
-                xmlSoccerService.getLiveScoreByLeague(Leagues.SCOTLAND_SCOTTISH_FIRST_DIVISION.getParam());
+                xmlSoccerService.getLiveScoreByLeague(Leagues.SCOTTISH_PREMIER_LEAGUE.getParam());
 
         Assert.notNull(test);
         log.info(test.toString());
@@ -45,7 +44,7 @@ public class XmlSoccerServiceImplTest extends AbstractTestNGSpringContextTests {
     @Test
     public void testGetLeagueStandingsBySeason() throws Exception {
         List<GetLeagueStandingsResultDto> test = xmlSoccerService.getLeagueStandingsBySeason(
-                Leagues.SCOTLAND_SCOTTISH_FIRST_DIVISION.getParam(), Seasons.SEASON_2014_2015.getParam()).
+                Leagues.SCOTTISH_PREMIER_LEAGUE.getParam(), Seasons.SEASON_2014_2015.getParam()).
                 stream().
                 collect(Collectors.toList());
 
@@ -82,7 +81,7 @@ public class XmlSoccerServiceImplTest extends AbstractTestNGSpringContextTests {
     public void testGetTopScorersByLeagueAndSeason() throws Exception {
         List<GetTopScorersResultDto> test =
                 xmlSoccerService.getTopScorersByLeagueAndSeason(
-                        Leagues.SCOTLAND_SCOTTISH_PREMIER_LEAGUE.getParam(), Seasons.SEASON_2014_2015.getParam()).
+                        Leagues.SCOTTISH_PREMIER_LEAGUE.getParam(), Seasons.SEASON_2014_2015.getParam()).
                         stream().
                         collect(Collectors.toList());
 
@@ -92,7 +91,7 @@ public class XmlSoccerServiceImplTest extends AbstractTestNGSpringContextTests {
     @Test
     public void testGetFixturesByLeagueAndSeason() throws Exception {
         List<GetFixturesResultDto> test = xmlSoccerService.getFixturesByLeagueAndSeason(
-                Leagues.SCOTLAND_SCOTTISH_PREMIER_LEAGUE.getParam(), Seasons.SEASON_2014_2015.getParam()).
+                Leagues.SCOTTISH_PREMIER_LEAGUE.getParam(), Seasons.SEASON_2014_2015.getParam()).
                 stream().
                 collect(Collectors.toList());
 
@@ -102,7 +101,7 @@ public class XmlSoccerServiceImplTest extends AbstractTestNGSpringContextTests {
     @Test
     public void testGetHistoricMatchesByLeagueAndSeason() throws Exception {
         List<GetHistoricMatchesResultDto> test = xmlSoccerService.getHistoricMatchesByLeagueAndSeason(
-                Leagues.SCOTLAND_SCOTTISH_PREMIER_LEAGUE.getParam(), Seasons.SEASON_2014_2015.getParam()).
+                Leagues.SCOTTISH_PREMIER_LEAGUE.getParam(), Seasons.SEASON_2014_2015.getParam()).
                 stream().
                 collect(Collectors.toList());
 
@@ -112,7 +111,7 @@ public class XmlSoccerServiceImplTest extends AbstractTestNGSpringContextTests {
     @Test
     public void testGetNextOddsByLeague() throws Exception {
         List<GetOddsResultDto> test = xmlSoccerService.getNextMatchOddsByLeague(
-                Leagues.SCOTLAND_SCOTTISH_PREMIER_LEAGUE.getParam()).stream().
+                Leagues.SCOTTISH_FIRST_DIVISION.getParam()).stream().
                 collect(Collectors.toList());
 
         Assert.notNull(test);
@@ -130,7 +129,7 @@ public class XmlSoccerServiceImplTest extends AbstractTestNGSpringContextTests {
     @Test
     public void testGetAllTeamsByLeagueAndSeason() throws Exception {
         List<GetTeamResultDto> test = xmlSoccerService.getAllTeamsByLeagueAndSeason(
-                Leagues.SCOTLAND_SCOTTISH_PREMIER_LEAGUE.getParam(), Seasons.SEASON_2012_2013.getParam()).
+                Leagues.SCOTTISH_PREMIER_LEAGUE.getParam(), Seasons.SEASON_2012_2013.getParam()).
                 stream().
                 collect(Collectors.toList());
 
