@@ -6,7 +6,7 @@
 
     <groupId>com.github.pabloo99.xmlsoccer</groupId>
     <artifactId>xmlsoccer</artifactId>
-    <version>0.0.5</version>
+    <version>0.0.6</version>
 
     <name>xmlsoccer-client</name>
     <description>Java client for XMLSoccer API</description>
