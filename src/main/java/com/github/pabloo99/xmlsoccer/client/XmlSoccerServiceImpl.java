@@ -282,13 +282,13 @@ public class XmlSoccerServiceImpl extends WebServiceGatewaySupport implements Xm
                                 new SoapActionCallback(
                                         "http://xmlsoccer.com/GetNextMatchOddsByLeague"));
 
-        GetOddsByFixtureMatchIdResultXML getOddsByFixtureMatchIdResultXML =
+        GetNextMatchOddsByLeagueResultXML getNextMatchOddsByLeagueResultXML =
                 response.getGetNextMatchOddsByLeagueResult().getContent();
 
-        Type listType = new TypeToken<List<GetOddsResultDto>>() {
+        Type listType = new TypeToken<List<GetNextOddsResultDto>>() {
         }.getType();
 
-        return modelMapper.map(getOddsByFixtureMatchIdResultXML.getOdds(), listType);
+        return modelMapper.map(getNextMatchOddsByLeagueResultXML.getOdds(), listType);
     }
 
     @Override
