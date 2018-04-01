@@ -13,6 +13,7 @@ import org.springframework.ws.soap.client.core.SoapActionCallback;
 
 import javax.xml.datatype.XMLGregorianCalendar;
 import java.lang.reflect.Type;
+import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
 
@@ -444,6 +445,29 @@ public class XmlSoccerServiceImpl extends WebServiceGatewaySupport implements Xm
 
         GetFixturesResultXML getFixturesResultXML =
                 response.getGetFixturesByLeagueAndSeasonResult().getContent();
+
+        Type listType = new TypeToken<List<GetFixturesResultDto>>() {
+        }.getType();
+
+        return modelMapper.map(getFixturesResultXML.getMatch(), listType);
+    }
+
+    @Override
+    public Collection<GetFixturesResultDto> getPlayOffFixturesByLeagueAndSeason(String leagueName, String season) {
+        GetPlayoffFixturesByLeagueAndSeason request = new GetPlayoffFixturesByLeagueAndSeason();
+        request.setApiKey(apiKey);
+        request.setLeague(leagueName);
+        request.setSeasonDateString(season);
+
+        GetPlayoffFixturesByLeagueAndSeasonResponse response =
+                (GetPlayoffFixturesByLeagueAndSeasonResponse) getWebServiceTemplate().
+                        marshalSendAndReceive(
+                                request,
+                                new SoapActionCallback(
+                                        "http://xmlsoccer.com/GetPlayoffFixturesByLeagueAndSeason"));
+
+        GetFixturesResultXML getFixturesResultXML =
+                response.getGetPlayoffFixturesByLeagueAndSeasonResult().getContent();
 
         Type listType = new TypeToken<List<GetFixturesResultDto>>() {
         }.getType();

@@ -41,7 +41,8 @@ public enum Leagues {
     NORWEGIAN_1_DIVISJON("Norwegian 1. Divisjon"),
     EKSTRAKLASA("Ekstraklasa"),
     PRIMERA_DIVISION("Primera Division"),
-    EURO_2016("EURO 2016");
+    EURO_2016("EURO 2016"),
+    SAUDI_ARABIAN_PREMIER_LEAGUE("Saudi Arabian Premier League");
 
     private final String text;
 

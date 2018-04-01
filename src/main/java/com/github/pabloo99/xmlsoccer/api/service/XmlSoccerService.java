@@ -52,6 +52,8 @@ public interface XmlSoccerService {
 
     Collection<GetFixturesResultDto> getFixturesByLeagueAndSeason(String leagueName, String season);
 
+    Collection<GetFixturesResultDto> getPlayOffFixturesByLeagueAndSeason(String leagueName, String season);
+
     Collection<GetHistoricMatchesResultDto> getHistoricMatchesByFixtureMatchID(Integer fixtureMatchId);
 
     Collection<GetHistoricMatchesResultDto> getHistoricMatchesByID(Integer matchId);
