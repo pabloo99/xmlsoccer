@@ -42,6 +42,30 @@ public class XmlSoccerServiceImplTest extends AbstractTestNGSpringContextTests {
     }
 
     @Test
+    public void testGetMatchEventsByFixtureMatchId() throws Exception {
+
+        List<GetMatchEventsDto> test = xmlSoccerService.getMatchEventsByFixtureMatchId(380477).
+                stream().
+                collect(Collectors.toList());
+
+        Assert.notNull(test);
+
+        log.info(test.toString());
+    }
+
+    @Test
+    public void testGetMatchLineupsEventsByFixtureMatchId() throws Exception {
+
+        List<GetMatchLineupsDto> test = xmlSoccerService.getMatchLineupsByFixtureMatchId(380477).
+                stream().
+                collect(Collectors.toList());
+
+        Assert.notNull(test);
+
+        log.info(test.toString());
+    }
+
+    @Test
     public void testGetLeagueStandingsBySeason() throws Exception {
         List<GetLeagueStandingsResultDto> test = xmlSoccerService.getLeagueStandingsBySeason(
                 Leagues.SCOTTISH_PREMIER_LEAGUE.getParam(), Seasons.SEASON_2014_2015.getParam()).

@@ -68,4 +68,8 @@ public interface XmlSoccerService {
 
     Collection<GetHistoricMatchesResultDto> getHistoricMatchesByTeamsAndDateInterval(Integer teamId1, Integer teamId2,
                                                                                      String startDate, String endDate);
+
+    Collection<GetMatchEventsDto> getMatchEventsByFixtureMatchId(Integer fixtureMatchId);
+
+    Collection<GetMatchLineupsDto> getMatchLineupsByFixtureMatchId(Integer fixtureMatchId);
 }

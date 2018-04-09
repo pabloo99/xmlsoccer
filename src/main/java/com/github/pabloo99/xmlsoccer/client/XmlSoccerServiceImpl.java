@@ -624,6 +624,50 @@ public class XmlSoccerServiceImpl extends WebServiceGatewaySupport implements Xm
     }
 
     @Override
+    public Collection<GetMatchEventsDto> getMatchEventsByFixtureMatchId(Integer fixtureMatchId) {
+        GetMatchEventsByFixtureMatchId request = new GetMatchEventsByFixtureMatchId();
+        request.setApiKey(apiKey);
+        request.setMatchId(fixtureMatchId);
+
+        GetMatchEventsByFixtureMatchIdResponse response =
+                (GetMatchEventsByFixtureMatchIdResponse) getWebServiceTemplate().
+                        marshalSendAndReceive(
+                                request,
+                                new SoapActionCallback(
+                                        "http://xmlsoccer.com/GetMatchEventsByFixtureMatchId"));
+
+        GetMatchEventsXML getMatchEventsXML =
+                response.getGetMatchEventsByFixtureMatchIdResult().getContent();
+
+        Type listType = new TypeToken<List<GetMatchEventsDto>>() {
+        }.getType();
+
+        return modelMapper.map(getMatchEventsXML.getMatchEvent(), listType);
+    }
+
+    @Override
+    public Collection<GetMatchLineupsDto> getMatchLineupsByFixtureMatchId(Integer fixtureMatchId) {
+        GetMatchLineupsByFixtureMatchId request = new GetMatchLineupsByFixtureMatchId();
+        request.setApiKey(apiKey);
+        request.setMatchId(fixtureMatchId);
+
+        GetMatchLineupsByFixtureMatchIdResponse response =
+                (GetMatchLineupsByFixtureMatchIdResponse) getWebServiceTemplate().
+                        marshalSendAndReceive(
+                                request,
+                                new SoapActionCallback(
+                                        "http://xmlsoccer.com/GetMatchLineupsByFixtureMatchId"));
+
+        GetMatchLineupsXML getMatchLineupsByFixtureMatchIdXML =
+                response.getGetMatchLineupsByFixtureMatchIdResult().getContent();
+
+        Type listType = new TypeToken<List<GetMatchLineupsDto>>() {
+        }.getType();
+
+        return modelMapper.map(getMatchLineupsByFixtureMatchIdXML.getMatchLineup(), listType);
+    }
+
+    @Override
     public XMLGregorianCalendar getEarliestMatchDatePerLeague(String leagueName) {
         GetEarliestMatchDatePerLeague request = new GetEarliestMatchDatePerLeague();
         request.setApiKey(apiKey);
