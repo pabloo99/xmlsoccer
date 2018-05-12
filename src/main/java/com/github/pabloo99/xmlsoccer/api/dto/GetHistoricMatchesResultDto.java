@@ -54,5 +54,8 @@ public class GetHistoricMatchesResultDto implements Serializable {
     private String awayTeamYellowCardDetails;
     private String homeTeamRedCardDetails;
     private String awayTeamRedCardDetails;
+    private String homeLineupCoach;
+    private String awayLineupCoach;
+    private String hasBeenRescheduled;
     private String season;
 }

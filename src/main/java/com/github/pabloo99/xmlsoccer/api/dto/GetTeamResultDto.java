@@ -11,10 +11,12 @@ import java.io.Serializable;
 @NoArgsConstructor
 public class GetTeamResultDto implements Serializable {
 
-    private int teamId;
+    private Integer teamId;
     private String name;
     private String country;
     private String stadium;
-    private String homePageURL;
+    private String website;
     private String wikiLink;
+    private String manager;
+    private Integer capacity;
 }

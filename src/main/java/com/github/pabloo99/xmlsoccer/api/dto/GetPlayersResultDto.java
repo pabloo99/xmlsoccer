@@ -23,4 +23,5 @@ public class GetPlayersResultDto implements Serializable {
     private Date dateOfBirth;
     private Date dateOfSigning;
     private String signing;
+    private Integer loanTo;
 }

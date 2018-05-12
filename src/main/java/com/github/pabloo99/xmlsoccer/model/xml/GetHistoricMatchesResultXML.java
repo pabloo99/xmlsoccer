@@ -63,7 +63,10 @@ public class GetHistoricMatchesResultXML {
             "homeTeamYellowCardDetails",
             "awayTeamYellowCardDetails",
             "homeTeamRedCardDetails",
-            "awayTeamRedCardDetails"
+            "awayTeamRedCardDetails",
+            "homeLineupCoach",
+            "awayLineupCoach",
+            "hasBeenRescheduled"
     })
     @Data
     public static class Match {
@@ -153,6 +156,12 @@ public class GetHistoricMatchesResultXML {
         protected String homeTeamRedCardDetails;
         @XmlElement(name = "AwayTeamRedCardDetails")
         protected String awayTeamRedCardDetails;
+        @XmlElement(name = "HomeLineupCoach")
+        protected String homeLineupCoach;
+        @XmlElement(name = "AwayLineupCoach")
+        protected String awayLineupCoach;
+        @XmlElement(name = "HasBeenRescheduled")
+        protected String hasBeenRescheduled;
         @XmlTransient
         protected String season;
     }

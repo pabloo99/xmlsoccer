@@ -25,7 +25,9 @@ public class GetTeamResultXML {
             "stadium",
             "website",
             "wikiPageUrl",
-            "country"
+            "country",
+            "capacity",
+            "manager"
     })
     @Data
     public static class Team {
@@ -44,5 +46,9 @@ public class GetTeamResultXML {
         protected String wikiPageUrl;
         @XmlElement(name = "Country", required = true)
         protected String country;
+        @XmlElement(name = "Capacity")
+        protected Integer capacity;
+        @XmlElement(name = "Manager")
+        protected String manager;
     }
 }
