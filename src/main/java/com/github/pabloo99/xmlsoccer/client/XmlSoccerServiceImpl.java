@@ -200,7 +200,7 @@ public class XmlSoccerServiceImpl extends WebServiceGatewaySupport implements Xm
                 findFirst();
 
         if (player.isPresent())
-            return modelMapper.map(player, GetPlayersResultDto.class);
+            return modelMapper.map(player.get(), GetPlayersResultDto.class);
 
         return null;
     }

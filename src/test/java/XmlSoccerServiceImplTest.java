@@ -96,7 +96,7 @@ public class XmlSoccerServiceImplTest extends AbstractTestNGSpringContextTests {
 
     @Test
     public void testGetPlayerById() throws Exception {
-        GetPlayersResultDto test = xmlSoccerService.getPlayersById(1384);
+        GetPlayersResultDto test = xmlSoccerService.getPlayersById(1459);
 
         Assert.isNull(test);
     }

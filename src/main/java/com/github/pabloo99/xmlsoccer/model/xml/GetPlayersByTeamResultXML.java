@@ -33,8 +33,8 @@ public class GetPlayersByTeamResultXML {
             "nationality",
             "position",
             "teamId",
-            "playerNumber",
             "loanTo",
+            "playerNumber",
             "dateOfBirth",
             "dateOfSigning",
             "signing"
@@ -56,10 +56,10 @@ public class GetPlayersByTeamResultXML {
         protected String position;
         @XmlElement(name = "Team_Id")
         protected Integer teamId;
-        @XmlElement(name = "PlayerNumber")
-        protected Integer playerNumber;
         @XmlElement(name = "LoadTo")
         protected Integer loanTo;
+        @XmlElement(name = "PlayerNumber")
+        protected Integer playerNumber;
         @XmlElement(name = "DateOfBirth", required = true)
         @XmlSchemaType(name = "dateTime")
         protected Date dateOfBirth;
