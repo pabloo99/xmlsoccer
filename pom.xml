@@ -40,6 +40,7 @@
     </scm>
 
     <properties>
+        <additionalparam>-Xdoclint:none</additionalparam>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.version.range>[2.2.1,3.2.1)</maven.version.range>
         <maven.enforcer.plugin>1.3.1</maven.enforcer.plugin>

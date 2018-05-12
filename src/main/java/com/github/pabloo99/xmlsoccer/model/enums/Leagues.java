@@ -42,7 +42,9 @@ public enum Leagues {
     EKSTRAKLASA("Ekstraklasa"),
     PRIMERA_DIVISION("Primera Division"),
     EURO_2016("EURO 2016"),
-    SAUDI_ARABIAN_PREMIER_LEAGUE("Saudi Arabian Premier League");
+    SAUDI_ARABIAN_PREMIER_LEAGUE("Saudi Arabian Premier League"),
+    ISRAEL("Ligaat AL"),
+    WORLD_CUP_2018("World Cup 2018");
 
     private final String text;
 
