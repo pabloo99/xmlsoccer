@@ -1,4 +1,4 @@
-# XMLSoccer 0.0.6 [![Build Status](https://travis-ci.org/pabloo99/xmlsoccer.svg?branch=master)](https://travis-ci.org/pabloo99/xmlsoccer)
+# XMLSoccer 0.0.7 [![Build Status](https://travis-ci.org/pabloo99/xmlsoccer.svg?branch=master)](https://travis-ci.org/pabloo99/xmlsoccer)
 Java client for XMLSoccer API
 
 # API Reference
@@ -22,7 +22,7 @@ If you are using Maven you can add dependency from Maven Central Repository
     <dependency>
       <groupId>com.github.pabloo99.xmlsoccer</groupId>
       <artifactId>xmlsoccer</artifactId>
-      <version>0.0.6</version>
+      <version>0.0.7</version>
     </dependency>
 ```
 or you can simply download jar file from:
